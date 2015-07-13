@@ -34,7 +34,7 @@ class APS {
 
         switch ($command) {
             case 'install':
-                self::_install(true);
+                self::_install();
                 break;
             case 'remove':
 //                /var/www/vhosts/aps.con/httpdocs/contenido/contenido
@@ -49,11 +49,7 @@ class APS {
 
                 break;
             case 'configure':
-//                self::_upgrade();
-//                self::_recursiveRmdir(strip_tags($vars['WEB__contenido_DIR']));
-
-                self::_updateConfigFile($vars);
-//                self::_install(false);
+                self::_updateConfigFiles($vars);
                 break;
             case 'upgrade':
 //                self::_upgrade();
@@ -84,7 +80,7 @@ class APS {
     /**
      *
      */
-    private static function _install($setup) {
+    private static function _install() {
 
         // get params
         $vars = $GLOBALS['_SERVER'];
@@ -96,7 +92,7 @@ class APS {
         );
 
         $values = self::_buildParams($vars);
-        self::_writeSetupFile($values, $paths, $setup);
+        self::_writeSetupFile($values, $paths);
         self::_runAutoInstaller($vars['WEB__setup_DIR'], $paths);
 
         $fh = fopen($paths['installationPath'] . 'http_path.txt', 'w');
@@ -147,21 +143,16 @@ class APS {
         }
     }
 
+
     /**
-     * @param      $values
-     * @param      $paths
-     * @param bool $setup
+     * @param $values
+     * @param $paths
      */
-    private static function _writeSetupFile($values, $paths, $setup = true) {
+    private static function _writeSetupFile($values, $paths) {
 
         // read example file
-//        if ($setup) {
         $file = file_get_contents($paths['tempPath'] . 'autoinstall-example.ini');
-//        } else {
-//            $file = file_get_contents($paths['installationPath'] . 'autoinstall-example.ini');
-//        }
 
-//        $fh = fopen($paths['installationPath'] . 'autoinstall-config.ini', 'ab+');
         if (file_exists($paths['installationPath'] . 'autoinstall-config.ini')) {
             unlink($paths['installationPath'] . 'autoinstall-config.ini');
         }
@@ -212,13 +203,7 @@ class APS {
     /**
      * @param $vars
      */
-    private static function _updateConfigFile($vars) {
-
-        $changedParams = array(
-            "'user'"     => "'user'     => '" . $vars['DB_main_LOGIN'] . "',",
-            "'password'" => "'password'     => '" . $vars['DB_main_PASSWORD'] . "',"
-//            "'http"      => $vars['SETTINGS_http_root_path']
-        );
+    private static function _updateConfigFiles($vars) {
 
         $values = self::_buildParams($GLOBALS['_SERVER']);
 
@@ -232,7 +217,45 @@ class APS {
         // old http_path
         $fePath = file_get_contents($paths['installationPath'] . 'http_path.txt');
 
-        // read example file
+        // update config.php
+        self::_updateConfig($fePath, $paths, $values, $vars);
+
+        // update config.clients.php
+        self::_updateClientConfig($fePath, $paths, $values);
+
+        // update http_path.txt this file is used to identify the last value => needed for replacing
+        // in config files
+        self::_updateHttpPath($paths, $values);
+
+        // update admin data => run cronjob
+        self::_runAdminUpdateJob($vars, $values);
+    }
+
+    /**
+     * @param $paths
+     * @param $values
+     */
+    private static function _updateHttpPath($paths, $values) {
+
+        $fh = fopen($paths['installationPath'] . 'http_path.txt', 'w');
+        fwrite($fh, $values['HTTP_PATH']);
+        fclose($fh);
+    }
+
+    /**
+     * @param $fePath
+     * @param $paths
+     * @param $values
+     * @param $vars
+     */
+    private static function _updateConfig($fePath, $paths, $values, $vars) {
+
+        $changedParams = array(
+            "'user'"     => "'user'     => '" . $vars['DB_main_LOGIN'] . "',",
+            "'password'" => "'password'     => '" . $vars['DB_main_PASSWORD'] . "',"
+//            "'http"      => $vars['SETTINGS_http_root_path']
+        );
+
         $file = file_get_contents($paths['installationPath'] . '../data/config/production/config.php');
 
         $fh = fopen($paths['installationPath'] . '../data/config/production/config.php', 'w');
@@ -247,77 +270,41 @@ class APS {
             }
         }
 
+        // replace http_path
         $file = preg_replace("/" . preg_quote($fePath, '/') . "/", $values['HTTP_PATH'], $file);
-
 
         fwrite($fh, $file);
         fclose($fh);
+    }
 
+    /**
+     * @param $fePath
+     * @param $paths
+     * @param $values
+     */
+    private static function _updateClientConfig($fePath, $paths, $values) {
 
-        error_log('FE: ');
-        error_log(preg_quote($fePath, '/'));
-        error_log('FE: ');
         // read example file
         $file = file_get_contents($paths['installationPath'] . '../data/config/production/config.clients.php');
-
-        $fh = fopen($paths['installationPath'] . '../data/config/production/config.clients.php', 'w');
-
+        $fh   = fopen($paths['installationPath'] . '../data/config/production/config.clients.php', 'w');
         $file = preg_replace("/" . preg_quote($fePath, '/') . "/", $values['HTTP_PATH'], $file);
 
         fwrite($fh, $file);
         fclose($fh);
+    }
 
-        $fh = fopen($paths['installationPath'] . 'http_path.txt', 'w');
-        fwrite($fh, $values['HTTP_PATH']);
-        fclose($fh);
-
+    /**
+     * @param $vars
+     * @param $values
+     */
+    private static function _runAdminUpdateJob($vars, $values) {
         $path = trim(strip_tags($vars['WEB__contenido_DIR'])) . '/cronjobs/';
 
         if (chdir($path)) {
-            $cmd = 'php -d max_execution_time=0 update_admin_data.php ' .  $values['SYSADMIN_PASSWORD'] . ' ' . $values['SYSADMIN_EMAIL'];
+            $cmd = 'php -d max_execution_time=0 update_admin_data.php ' . $values['SYSADMIN_PASSWORD'] . ' ' . $values['SYSADMIN_EMAIL'];
             exec($cmd);
         }
     }
-
-//    /**
-//     * @param $vars
-//     *
-//     * @return array
-//     */
-//    private static function _buildUpgradeParams($vars) {
-//
-//        // build clean data
-//        array_walk($vars, function (&$value) {
-//            if (!is_array($value)) {
-//                $value = trim(strip_tags($value));
-//            }
-//        });
-//
-//        // params that have to be replace in ini file
-//        return array(
-//            "'user'"     => "'user'     => " . $vars['DB_main_LOGIN'] . ',',
-//            "'password'" => "'password'     => " . $vars['DB_main_PASSWORD'] . ',',
-//            "'http"      => $vars['SETTINGS_http_root_path']
-//        );
-//    }
-
-//    /**
-//     *
-//     */
-//    private static function _upgrade() {
-//
-//        // get params
-//        $vars = $GLOBALS['_SERVER'];
-//        $path = $vars['argv'][0];
-//
-//        $paths = array(
-//            'tempPath'         => str_replace('/scripts/configure', '/htdocs/setup/', $path),
-//            'installationPath' => strip_tags($vars['WEB__contenido_DIR']) . '/'
-//        );
-//
-//        $values = self::_buildUpgradeParams($vars);
-//        self::_writeConfigFile($values, $paths);
-//    }
 }
 
 ?>
