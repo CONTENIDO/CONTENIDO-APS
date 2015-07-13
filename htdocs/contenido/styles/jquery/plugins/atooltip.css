@@ -1,0 +1,51 @@
+/*
+Node structure
+--------------
+.aToolTip
+    .aToolTipInner
+        .aToolTipContent
+        .aToolTipCloseBtn
+
+*/
+
+.aToolTip { margin:2px 0 0 2px; }
+
+.aToolTipInner {
+    border-left:1px solid #b3b3b3;
+    border-top:1px solid #666;
+    border-right:2px solid #b3b3b3;
+    border-bottom:2px solid #b3b3b3;
+    background:#f1f1f1;
+    color:#000;
+    padding:4px 12px 6px 24px;
+    margin: 0;
+}
+
+.aToolTipInner .aToolTipContent {
+    position:relative;
+    margin:0;
+    padding:0;
+}
+
+a.aToolTipCloseBtn {
+    display:block;
+    height:16px;
+    width:16px;
+    background:url(../../../images/but_cancel.gif) no-repeat;
+    text-indent:-9999px;
+    outline:none;
+    position:absolute;
+    top:1px;
+    left:1px;
+    margin:1px 2px 2px 1px;
+    padding:0;
+}
+
+a.infoButton,
+.infoButton:hover {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url(../../../images/info.gif) no-repeat;
+    margin-bottom: -3px;
+}

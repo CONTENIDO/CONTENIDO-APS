@@ -1,0 +1,16 @@
+./includes/config.plugin.php
+./includes/include.checkperms.php
+./includes/include.linkchecker.php
+./includes/include.linkchecker_tests.php
+./includes/include.linkchecker_whitelist.php
+./plugin.xml
+./templates/standard/template.linkchecker_noerrors.html
+./templates/standard/template.linkchecker_test.html
+./templates/standard/template.linkchecker_test_errors.html
+./templates/standard/template.linkchecker_test_errors_cat.html
+./templates/standard/template.linkchecker_test_nothing.html
+./templates/standard/template.linkchecker_whitelist.html
+./templates/standard/template.linkchecker_whitelist_urls.html
+./xml/lang_de_DE.xml
+./xml/lang_en_EN.xml
+./xml/lang_en_US.xml

@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CONTENIDO Solr\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-06-21 14:32+0100\n"
+"Last-Translator: Marcus Gnaß <marcus.gnass@4fb.de>\n"
+"Language-Team: Marcus Gnaß <marcus.gnass@4fb.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-KeywordsList: i18n\n"
+"X-Poedit-SearchPath-0: \n"
+
+; class.solr_indexer.php
+
+msgid "WARNING_INVALID_CLIENT_OPTIONS"
+msgstr "Artikel konnte nicht indizier werden, da Solr nicht korrekt konfiguriert ist."
+
+; class.solr.gui.php
+
+msgid "CLIENT_OPTIONS"
+msgstr "Client Optionen"
+
+msgid "OPTION"
+msgstr "Option"
+
+msgid "VALUE"
+msgstr "Wert"
+
+msgid "DESCRIPTION"
+msgstr "Beschreibung"
+
+msgid "DESCR_HOSTNAME"
+msgstr "Der Name des Solr-Servers. <b>Ohne Protokoll!</b>"
+
+msgid "DESCR_PORT"
+msgstr "Die Port-Nummer."
+
+msgid "DESCR_PATH"
+msgstr "Der Pfad zum Solr-Core."
+
+msgid "DESCR_LOGIN"
+msgstr "Der Benutzername für die HTTP-Autentifizierung, falls vorhanden."
+
+msgid "DESCR_PASSWORD"
+msgstr "Das Paßwort für die HTTP-Autentifizierung."
+
+msgid "DESCR_SECURE"
+msgstr "Boolscher Wert der angibt ob im sicheren Modus verbunden werden soll oder nicht."
+
+msgid "DESCR_TIMEOUT"
+msgstr "Dies ist die maximale Zeit in Sekunden die für die HTTP Datenübertragungsoperation erlaubt ist. Standardwert ist 30 Sekunden."
+
+msgid "DESCR_WT"
+msgstr "Der Name des 'response writers', z.B. xml, phpnative."
+
+msgid "DESCR_PROXY_HOST"
+msgstr "Der Name des Proxy-Servers, falls vorhanden."
+
+msgid "DESCR_PROXY_PORT"
+msgstr "Der Proxy-Port."
+
+msgid "DESCR_PROXY_LOGIN"
+msgstr "Der Proxy-Benutzername."
+
+msgid "DESCR_PROXY_PASSWORD"
+msgstr "Das Proxy-Paßwort."
+
+msgid "DESCR_SSL_CERT"
+msgstr "Dateiname zu einer PEM-formatierten Datei die den privaten Schlüssel und das private Zertifikat (in dieser Reihenfolge aneinandergehängt) enthält. Bitte beachten Sie, daß wenn die ssl_cert-Datei ausschließlich das private Zertifikat enthält, eine gesonderte ssl_key-Datei angegeben werden muß."
+
+msgid "DESCR_SSL_KEY"
+msgstr "Dateiname zu einer PEM-formatierten Datei die ausschließlich den privaten Schlüssel enthält."
+
+msgid "DESCR_SSL_KEYPASSWORD"
+msgstr "Paßword für den privaten Schlüssel. Die ssl_keypassword-Option ist eine Pflichtangabe wenn die ssl_cert- oder ssl_key-Option gesetzt ist."
+
+msgid "DESCR_SSL_CAINFO"
+msgstr "Name der Datei, das ein oder mehrere CA Zertifikate enthält um den Peer zu verifizieren."
+
+msgid "DESCR_SSL_CAPATH"
+msgstr "Name des Verzeichnisses, das ein oder mehrere CA Zertifikate enthält um den Peer zu verifizieren."
+
+msgid "DESCR_RELOAD"
+msgstr "Index nachladen entsprechend seiner Konfiguration in der Datei schema.xml."
+
+msgid "DESCR_REINDEX"
+msgstr "Artikel des aktuellen Mandanten reindizieren. Artikel die offline oder nicht suchbar sind werden dabei übersprungen."
+
+msgid "DESCR_DELETE"
+msgstr "Artikel des aktuellen Mandanten löschen."
+

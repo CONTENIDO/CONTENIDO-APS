@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.rights_create.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <link rel="stylesheet" type="text/css" href="styles/jquery/plugins/timepicker.css">
+    <style type="text/css">
+    #contenido_notification {margin-bottom:5px;}
+    table.content {
+        border: 0 solid;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+    }
+    table.content td {
+        border: 1px solid;
+        border-bottom-width: 0;
+        border-left-width: 0;
+
+    border-color:{BORDERCOLOR};}
+    </style>
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/jquery/plugins/timepicker.js"></script>
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+    <script type="text/javascript">
+    (function(Con, $) {
+        Con.getFrame('left_bottom').location.reload();
+        var createdUserId = '{USERID}';
+
+        if (createdUserId != '') {
+            Con.getFrame('right_top').location = 'main.php?area=user&frame=3&action=&userid=' + createdUserId + '&contenido=' + Con.sid;
+            Con.getFrame('right_bottom').location = 'main.php?area=user_overview&frame=4&action=&userid=' + createdUserId + '&contenido=' + Con.sid;
+        } else {
+            Con.getFrame('right_top').location = 'main.php?area=user&frame=3&contenido=' + Con.sid;
+        }
+    })(Con, Con.$);
+    </script>
+    <!-- get javascript files for language != en -->
+    {CAL_LANG}
+
+</head>
+<body style="margin:10px">
+{NOTIFICATION}
+{FORM}
+<table class="generic" cellspacing="0" cellpadding="2" border="0">
+    <tr>
+        <th valign="top">{PROPERTY}</th>
+        <th valign="top" align="left">{VALUE}</th>
+    </tr>
+    <!-- BEGIN:BLOCK -->
+    <tr>
+        <td valign="top">{CATNAME}</td>
+        <td valign="top" align="left">{CATFIELD}</td>
+    </tr>
+    <!-- END:BLOCK -->
+    <tr>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" align="right">
+            <input type="image" src="images/but_ok.gif" alt="{SUBMITTEXT}" border="0">
+        </td>
+    </tr>
+</table>
+</form>
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        $('#valid_from').datetimepicker({
+            buttonImage: '{PATH_TO_CALENDER_PIC}',
+            buttonImageOnly: true,
+            showOn: 'both',
+            dateFormat: 'yy-mm-dd',
+			timeFormat: 'hh:mm:00',
+            onClose: function(dateText, inst) {
+                var endDateTextBox = $('#valid_to');
+                if (endDateTextBox.val() != '') {
+                    var testStartDate = new DateTime(dateText),
+                        testEndDate = new DateTime(endDateTextBox.val());
+                    if (testStartDate > testEndDate) {
+                        endDateTextBox.val(dateText);
+                    }
+                }
+            },
+            onSelect: function (selectedDateTime) {
+                var start = $(this).datetimepicker('getDate');
+            }
+        });
+
+        $('#valid_to').datetimepicker({
+            buttonImage: '{PATH_TO_CALENDER_PIC}',
+            buttonImageOnly: true,
+            showOn: 'both',
+            dateFormat: 'yy-mm-dd',
+			timeFormat: 'hh:mm:00',
+            onClose: function(dateText, inst) {
+                var startDateTextBox = $('#valid_from');
+                if (startDateTextBox.val() != '') {
+                    var testStartDate = new DateTime(startDateTextBox.val()),
+                        testEndDate = new DateTime(dateText);
+                    if (testStartDate > testEndDate) {
+                        startDateTextBox.val(dateText);
+                    }
+                }
+            },
+            onSelect: function (selectedDateTime) {
+                var end = $(this).datetimepicker('getDateTime');
+            }
+        });
+    });
+})(Con, Con.$);
+</script>
+
+</body>
+</html>

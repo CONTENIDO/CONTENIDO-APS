@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<!-- frameset_menuless_content -->
+
+<html>
+
+<head>
+
+    <title>:: :: :: :: CONTENIDO {VERSION} {LOCATION}</title>
+
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+
+    <link rel="SHORTCUT ICON" href="{CONTENIDOPATH}">
+
+{_JS_HEAD_CONTENIDO_}
+
+    <style type="text/css">
+        frameset, frame{border: none; margin: 0; padding: 0;}
+    </style>
+
+</head>
+
+<frameset rows="34,*">
+
+    <frame src="{FRAME[3]}" name="right_top" frameborder="0" scrolling="no" noresize="noresize">
+    <frame src="{FRAME[4]}" name="right_bottom" frameborder="0" scrolling="auto">
+
+    <noframes>
+        <body bgcolor="#000000">
+            CONTENIDO uses frames but your browser does not support frames
+        </body>
+    </noframes>
+
+</frameset>
+
+</html>

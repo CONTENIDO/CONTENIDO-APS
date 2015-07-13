@@ -1,0 +1,1 @@
+<p>{$MESSAGE|escape}</p>

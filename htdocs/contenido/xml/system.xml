@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CONTENIDO XML language file
+
+NOTE: Comments below with i18n() are used for translation purposes and the are
+      required for the parser to detect/extract text to translate.
+
+gettext:
+i18n("Versioning")
+i18n("Check for updates")
+i18n("Update notifier")
+i18n("Get news from contenido.org")
+i18n("Update check period (minutes)")
+i18n("Clickable menu in backend")
+i18n("Backend")
+i18n("Use TinyMce as insite editor")
+i18n("Log mails")
+i18n("Mailserver")
+i18n("Host")
+i18n("User")
+i18n("Password")
+i18n("Encryption (empty, ssl or tls)")
+i18n("Port")
+i18n("Sender mail")
+i18n("Sender name")
+i18n("Use passwordrequest in Backend")
+i18n("Activate maintenance mode")
+i18n("Use CodeMirror for code highlighting")
+i18n("Default client (ID)")
+i18n("Maximum log size in MiB (0 = infinite)")
+i18n("Generate XHTML")
+i18n("Development")
+i18n("Use image magic (if available)")
+i18n("Debug to file")
+i18n("Visible debug")
+i18n("Allow all HTML tags and attributes in TinyMCE")
+i18n("Optional backend label")
+i18n("Show only CSS/JS/HTML files at areas CSS/JS/HTML")
+i18n("Show message for unknown module translations");
+i18n("Debug function for plugins");
+i18n("Serverpath to style version files")
+i18n("Style versioning activated")
+i18n("Maximum number of stored style versions")
+i18n("Article Versioning")
+
+// old text
+i18n("Versioning activated")
+i18n("Serverpath to version files")
+i18n("Maximum number of stored versions")
+-->
+
+<system>
+    <properties>
+        <versioning>
+            <activated>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Style versioning activated</label>
+                <group>Versioning</group>
+            </activated>            
+            <path>
+                <values/>
+                <label>Serverpath to style version files</label>
+                <group>Versioning</group>
+            </path>
+            <prune_limit>
+                <values>integer</values>
+                <label>Maximum number of stored style versions</label>
+                <group>Versioning</group>
+            </prune_limit>
+            <enabled>
+                <values>
+                    <array_value>disabled</array_value>
+                    <array_value>simple</array_value>
+                    <array_value>advanced</array_value>
+                </values>
+                <label>Content versioning</label>
+                <group>Versioning</group>
+            </enabled>
+        </versioning>
+        <update>
+            <check>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Check for updates</label>
+                <group>Update notifier</group>
+            </check>
+            <news_feed>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Get news from contenido.org</label>
+                <group>Update notifier</group>
+            </news_feed>
+            <check_period>
+                <values>integer</values>
+                <label>Update check period (minutes)</label>
+                <group>Update notifier</group>
+            </check_period>
+        </update>
+        <system>
+            <clickmenu>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Clickable menu in backend</label>
+                <group>Backend</group>
+            </clickmenu>
+            <insite_editing_activated>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Use TinyMce as insite editor</label>
+                <group>Backend</group>
+            </insite_editing_activated>
+            <mail_log>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Log mails</label>
+                <group>Mailserver</group>
+            </mail_log>
+            <mail_host>
+                <values/>
+                <label>Host</label>
+                <group>Mailserver</group>
+            </mail_host>
+            <mail_user>
+                <values/>
+                <label>User</label>
+                <group>Mailserver</group>
+            </mail_user>
+            <mail_pass>
+                <values/>
+                <label>Password</label>
+                <group>Mailserver</group>
+            </mail_pass>
+            <mail_encryption>
+                <values/>
+                <label>Encryption (empty, ssl or tls)</label>
+                <group>Mailserver</group>
+            </mail_encryption>
+            <mail_port>
+                <values/>
+                <label>Port</label>
+                <group>Mailserver</group>
+            </mail_port>
+            <mail_sender>
+                <values/>
+                <label>Sender mail</label>
+                <group>Mailserver</group>
+            </mail_sender>
+            <mail_sender_name>
+                <values/>
+                <label>Sender name</label>
+                <group>Mailserver</group>
+            </mail_sender_name>
+        </system>
+        <tinymce>
+            <auto_full_elements>
+                <values>
+                    <array_value>1</array_value>
+                    <array_value>0</array_value>
+                </values>
+                <label>Allow all HTML tags and attributes in TinyMCE</label>
+                <group>Backend</group>
+            </auto_full_elements>
+        </tinymce>
+        <pw_request>
+            <enable>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Use passwordrequest in Backend</label>
+                <group>Backend</group>
+            </enable>
+            <reset_threshold>
+                <values>integer</values>
+                <label>User password reset threshold</label>
+                <group>Backend</group>
+            </reset_threshold>
+            <outdated_threshold>
+                <values>label</values>
+                <label>When to consider a password reset request to be outdated</label>
+                <group>Backend</group>
+            </outdated_threshold>
+        </pw_request>
+        <maintenance>
+            <mode>
+                <values>
+                    <array_value>enabled</array_value>
+                    <array_value>disabled</array_value>
+                </values>
+                <label>Activate maintenance mode</label>
+                <group>Backend</group>
+            </mode>
+        </maintenance>
+        <codemirror>
+            <activated>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Use CodeMirror for code highlighting</label>
+                <group>Backend</group>
+            </activated>
+        </codemirror>
+        <backend>
+            <preferred_idclient>
+                <values>integer</values>
+                <label>Default client (ID)</label>
+                <group>Backend</group>
+            </preferred_idclient>
+            <max_log_size>
+                <values>label</values>
+                <label>Maximum log size in MiB (0 = infinite)</label>
+                <group>Backend</group>
+            </max_log_size>
+            <backend_label>
+                <values>label</values>
+                <label>Optional backend label</label>
+                <group>Backend</group>
+            </backend_label>
+            <backend_file_extensions>
+            	<values>
+                    <array_value>enabled</array_value>
+                    <array_value>disabled</array_value>
+                </values>
+            	<label>Show only CSS/JS/HTML files at areas CSS/JS/HTML</label>
+            	<group>Backend</group>
+            </backend_file_extensions>
+        </backend>
+        <generator>
+            <xhtml>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Generate XHTML</label>
+                <group>Development</group>
+            </xhtml>
+            <basehref>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Generate basehref</label>
+                <group>Development</group>
+            </basehref>
+        </generator>
+        <debug>
+            <debug_to_file>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Debug to file</label>
+                <group>Development</group>
+            </debug_to_file>
+            <debug_to_screen>
+                <values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Visible debug</label>
+                <group>Development</group>
+            </debug_to_screen>
+            <debug_for_plugins>
+            	<values>
+            		<array_value>true</array_value>
+            		<array_value>false</array_value>
+            	</values>
+            	<label>Debug function for plugins</label>
+            	<group>Development</group>
+            </debug_for_plugins> 
+            <module_translation_message>
+            	<values>
+                    <array_value>true</array_value>
+                    <array_value>false</array_value>
+                </values>
+                <label>Show message for unknown module translations</label>
+                <group>Development</group>
+            </module_translation_message>
+        </debug>
+    </properties>
+</system>

@@ -1,0 +1,19 @@
+.oxidcms strong {
+	display: inline-block;
+	width: 140px;
+}
+
+.oxidcms input[type="text"],
+.oxidcms input[type="password"]{
+	width: 431px;
+	margin: 14px 0px;
+}
+
+#uri_submit input{
+	float: right;
+}
+
+#uri_submit {
+	width: 575px;
+	height: 22px;
+}

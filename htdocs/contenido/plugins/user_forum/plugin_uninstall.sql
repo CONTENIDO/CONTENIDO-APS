@@ -1,0 +1,1 @@
+DELETE FROM !PREFIX!_user_forum

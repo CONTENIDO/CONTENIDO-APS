@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.lang_left_top.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <style type="text/css">
+    #top_left_container .sel {clear: both;}
+    </style>
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/contenidoConfig.js"></script>
+</head>
+<body>
+
+<div id="top_left_container" data-resizegap="10">
+    <div class="leftTopAction">
+        {NEWLANG}
+        {CLIENTSELECT}
+    </div>
+</div>
+
+<script type="text/javascript">
+(function(Con, $) {
+
+    function _onCreateClick(e) {
+        Con.showConfirmation('i18n("Do you really want to create a new language?")', _confirmCallback);
+    }
+
+    function _confirmCallback() {
+        var $element = $("#editclient"),
+            url = Con.UtilUrl.build("main.php", {
+                area: "lang_edit",
+                action: "lang_newlanguage",
+                frame: "4",
+                targetclient: $element.val()
+            });
+        Con.getFrame('right_bottom').location.href = url;
+    }
+
+    function _onClientChange(e) {
+        var url = Con.UtilUrl.build("main.php", {
+            area: "lang",
+            frame: "2",
+            targetclient: $(this).val()
+        });
+        Con.getFrame('left_bottom').location.href = url;
+    }
+
+    $(function() {
+        // Bind to create language click
+        $("#top_left_container a.addfunction").click(_onCreateClick);
+
+        // Bind to client change
+        $("#editclient").change(_onClientChange);
+    });
+
+})(Con, Con.$);
+
+</script>
+
+</body>
+</html>
+<!--
+
+i18n("Do you really want to create a new language?")
+
+-->

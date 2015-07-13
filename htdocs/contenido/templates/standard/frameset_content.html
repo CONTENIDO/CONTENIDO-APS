@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<!-- frameset_content -->
+
+<html>
+
+<head>
+
+    <title>:: :: :: :: CONTENIDO {VERSION} {LOCATION}</title>
+
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+
+    <link rel="SHORTCUT ICON" href="{CONTENIDOPATH}">
+
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/conFrameResize.js"></script>
+    <script type="text/javascript">
+    var frameResize = new Con.FrameResize();
+    </script>
+
+    <script type="text/javascript">
+        var ua = navigator.userAgent,
+            m = ua.match(/MSIE\s([^;]*)/),
+            s = ua.match(/safari/gi), // If there is no frameborder, safari does not allow to resize frame
+            contentFrameBorder = 0,
+            leftBorder = 0;
+
+        if (m && m[1]) {
+            contentFrameBorder = 0;
+            leftBorder = 0;
+        } else if (s) {
+            contentFrameBorder = 1;
+            leftBorder = 1;
+        } else {
+            contentFrameBorder = 1;
+            leftBorder = 0;
+        }
+
+        document.writeln('<frameset id="contentFrame" cols="{WIDTH},*" border="5" frameborder="' + contentFrameBorder + '" framespacing="5">');
+        document.writeln('    <frame name="left" id="left" scrolling="no" src="{LEFT}" frameborder="' + leftBorder + '">');
+        document.writeln('    <frame name="right" id="right" scrolling="no" src="{RIGHT}" frameborder="0">');
+        document.writeln('</frameset>');
+    </script>
+
+</head>
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        var attempts = 0;
+        function initFrame() {
+            var frame = Con.getFrame('left_top');
+            if (frame) {
+                try {
+                    frameResize.resizeTopLeftFrame($('body', frame).height() + 1);
+                } catch(e) {
+                    if (++attempts < 3) {
+                        window.setTimeout(function() {
+                            initFrame();
+                        }, 100);
+                    }
+                }
+            }
+        }
+
+        initFrame();
+    });
+})(Con, Con.$);
+</script>
+</html>

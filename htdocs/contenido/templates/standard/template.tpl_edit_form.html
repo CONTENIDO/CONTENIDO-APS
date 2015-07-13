@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.tpl_edit_form.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+</head>
+
+<body style="margin: 10px">
+
+<form method="post" name="tplform" action="{ACTION}">
+
+<input type="hidden" name="idtpl" value="{IDTPL}">
+
+<table cellspacing="0" cellpadding="2" border="0" width="100%">
+    <tr style="font-weight:bold; background-color: #a9aec2">
+        <td class="textw_medium" style="border: 1px solid #747488;">i18n("Name"):</td>
+    </tr>
+
+    <tr>
+        <td style="border: 1px solid #747488;border-top-width: 0;background-color: #F4F4F7"><input name="tplname" size="80" style="border: 1px solid #747488;background: #FFFFFF" type="text" class="code_input" value="{NAME}"></td>
+    </tr>
+
+    <tr><td><img src="images/spacer.gif" width="1" height="10" alt=""></td></tr>
+
+    <tr style="font-weight:bold; background-color: #a9aec2">
+        <td class="textw_medium" style="border: 1px solid #747488;">i18n("Description"):</td>
+    </tr>
+
+    <tr>
+        <td style="border: 1px solid #747488;border-top-width: 0;background-color: #F4F4F7"><textarea name="description" class="code_sfullwidth" style="border: 1px solid #747488;background: #FFFFFF" cols="80" rows="5" height="30px">{DESCR}</textarea></td>
+    </tr>
+
+    <tr><td><img src="images/spacer.gif" width="1" height="10" alt=""></td></tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="2">
+    <tr style="font-weight:bold; background-color: #a9aec2">
+        <td class="textw_medium" style="border: 1px solid #747488;">i18n("Layout"):</td>
+    </tr>
+
+    <tr>
+        <td style="border: 1px solid #747488;border-top-width: 0;background-color: #F4F4F7">
+            <input type="hidden" name="changelayout" value="0">
+            {SELECTBOXLAYOUTS}
+        </td>
+    </tr>
+
+    <tr><td><img src="images/spacer.gif" width="1" height="10" alt=""></td></tr>
+
+    <tr style="font-weight:bold; background-color: #a9aec2">
+        <td class="textw_medium" style="border: 1px solid #747488;">i18n("Layout description"):</td>
+    </tr>
+
+    <tr>
+        <td class="text_medium" style="border: 1px solid #747488;border-top-width: 0;background-color: #F4F4F7">
+            {LAYOUTDESCRIPTION}
+        </td>
+    </tr>
+
+    <tr><td><img src="images/spacer.gif" width="1" height="10" alt=""></td></tr>
+
+    <!-- BEGIN:BLOCK -->
+    <tr style="font-weight:bold; background-color: #a9aec2">
+        <td class="textw_medium" style="border: 1px solid #747488;">{CAPTION}</td>
+    </tr>
+
+    <tr>
+        <td class="text_medium" style="border: 1px solid #747488;border-top-width: 0;background-color: #F4F4F7">{VALUE}</td>
+    </tr>
+
+    <tr><td><img src="images/spacer.gif" width="1" height="10" alt=""></td></tr>
+    <!-- END:BLOCK -->
+
+    <tr>
+        <td align="right"><input accesskey="s" type="image" src="images/but_ok.gif"></td>
+    </tr>
+</table>
+</form>
+
+<script type="text/javascript">
+(function(Con, $) {
+    var url = Con.UtilUrl.build("main.php", {
+        area: 'tpl',
+        frame: 2
+    });
+    Con.getFrame('left_bottom').location.href = url;
+})(Con, Con.$);
+</script>
+
+{MARK}
+
+</body>
+</html>
+<!--
+template.tpl_edit_form
+
+i18n("Name")
+i18n("Description")
+i18n("Layout")
+i18n("Layout description")
+
+-->

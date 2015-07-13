@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.upl_left_top.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <link rel="stylesheet" type="text/css" href="styles/jquery/plugins/tipsy.css">
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/jquery/plugins/tipsy.js"></script>
+    <script type="text/javascript" src="scripts/registerTipsy.js"></script>
+</head>
+
+<body>
+
+<div id="top_left_container" data-resizegap="1">
+    {NOTIFICATION}
+    <div class="leftTopAction" style="display:{DISPLAY_SEARCH};">
+      <!-- SEARCH -->
+      {SEARCHTITLE}:<br>
+      {SEARCHFORM}
+    </div>
+    <!-- CREATE DIR -->
+    <div class="leftTopAction leftTopActionNext" style="display:{DISPLAY_DIR};">
+        <form method="POST" {TARGET} name="newdir">
+            <input type="hidden" name="path" value="{PATH}">
+            <input type="hidden" name="contenido" value="1">
+            <input type="hidden" name="frame" value="1">
+            <input type="hidden" name="area" value="upl">
+            <input name="selectedfile" type="hidden" id="selectedfile" value="">
+            i18n("Create directory in"):<br>
+            <span id="caption2">{CAPTION2}</span><br>
+            <div>
+                  <input class="text_small vAlignMiddle" type="text" name="foldername" onchange="document.newdir.submit();">
+                  <input class="vAlignMiddle tableElement" type="image" src="images/submit.gif">
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    {RESULT}
+</script>
+
+</body>
+</html>
+<!--
+template.upl_left_top
+
+i18n("Create directory in")
+
+-->

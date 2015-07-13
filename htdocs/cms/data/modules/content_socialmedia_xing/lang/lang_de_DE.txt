@@ -1,0 +1,7 @@
+LOOK=Darstellungsart
+NAME=Benutzername
+OPTIONBUTTON=2. Option: Button
+OPTIONICON=1. Option: Icon
+OVERVIEW=Xing-Social-Media-Integration
+SAVE=Speichern
+URL_PROFILE=URL zum Dienst

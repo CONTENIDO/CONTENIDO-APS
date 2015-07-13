@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CONTENIDO Plugin SOAP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-22 16:45+0200\n"
+"PO-Revision-Date: 2015-04-22 16:47+0100\n"
+"Last-Translator: \n"
+"Language-Team: Dominik Ziegler <dominik.ziegler@4fb.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Poedit-KeywordsList: i18n\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: soap\n"
+
+#: classes/class.oxidcms.gui.php:106
+msgid "config is not writable check permissions"
+msgstr "Configuration file is not writable. Please check permissions"
+
+#: classes/class.oxidcms.gui.php:108
+msgid "config successfully saved"
+msgstr "Configuration successfully saved"
+
+#: classes/class.oxidcms.gui.php:137
+msgid "OXIDCMS Configuration"
+msgstr "OXIDCMS Configuration"
+
+#: classes/class.oxidcms.gui.php:138
+msgid "Shop username"
+msgstr "Shop username"
+
+#: classes/class.oxidcms.gui.php:139
+msgid "Shop password"
+msgstr "Shop password"
+
+#: classes/class.oxidcms.gui.php:140
+msgid "Shop ID"
+msgstr "Shop ID"
+
+#: classes/class.oxidcms.gui.php:141
+msgid "Language ID"
+msgstr "Language ID"
+
+#: classes/oxidcms_soapclient.php:201
+msgid "Please configure ERP-Plugin credentials in Extras -> OXIDCMS"
+msgstr "Please configure ERP-Plugin credentials in Extras -> OXIDCMS"

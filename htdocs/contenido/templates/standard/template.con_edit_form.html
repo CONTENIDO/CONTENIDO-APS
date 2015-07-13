@@ -1,0 +1,445 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.con_edit_form.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/jquery/plugins/timepicker.js"></script>
+    <!-- get javascript files for language != en -->
+    {CAL_LANG}
+    <style type="text/css">
+    .main-head {
+        display: block;
+        width: 680px;
+    }
+
+    .main-head .first-row {
+        width: 100px;
+    }
+
+    .main-head .second-row {
+        width: 100px;
+    }
+
+    .main-head .third-row {
+        width: 150px;
+    }
+
+    .main-head .fourth-row {
+        width: 280px;
+    }
+
+    .first-row {
+        width: 100px;
+    }
+
+    .second-row {
+        width: 100px;
+    }
+
+    .third-row {
+        width: 150px;
+    }
+
+    .fourth-row {
+        width: 280px;
+    }
+
+    #main-table > tbody {
+        display: block;
+        max-height: 200px;
+        overflow-y: auto;
+        width: 680px;
+    }
+
+	div.syncList {
+		height: 210px;
+		width: 200px;
+		overflow: auto;
+	}
+
+	div.syncList div.syncLanguage {
+		padding: 5px;
+	}
+
+	div.syncList input.button {
+		height: 16px;
+		width: 16px;
+		border: 0px;
+	    /*background-color: none;*/
+	    cursor: pointer;
+	    outline: 0;
+		font-size: 0;
+		margin: 2px;
+	}
+    </style>
+
+</head>
+<body style="margin:10px">
+
+    {CATEGORY}
+    
+    <form method="post" name="selectVersion" action="{ACTION2}">
+        <input type="hidden" name="idart" value="{IDART}">
+        <input type="hidden" name="idcat" value="{IDCAT}">
+        <input type="hidden" name="idartlang" value="{IDARTLANG}">
+        <input type="hidden" name="idArtLangVersion" value="">
+    </form>
+    
+    <form method="post" name="copyto" action="{ACTION3}">
+        <input type="hidden" name="idart" value="{IDART}">
+        <input type="hidden" name="idcat" value="{IDCAT}">
+        <input type="hidden" name="idartlang" value="{IDARTLANG}">
+        <input type="hidden" name="idArtLangVersion" value="">
+    </form>  
+
+    <form method="post" name="art_props" action="{ACTION}">
+
+        <input type="hidden" name="action" value="con_saveart">
+        {HIDDENFIELDS}
+        <input type="hidden" name="tmp_firstedit" value="{TMP_FIRSTEDIT}">
+        <input type="hidden" name="idart" value="{IDART}">
+        <input type="hidden" name="idcat" value="{IDCAT}">
+        <input type="hidden" name="idartlang" value="{IDARTLANG}">        
+        {NOTIFICATION}
+        
+        <table cellspacing="0" cellpadding="2" class="generic conEditForm">
+
+            <tr valign="top">
+               <td class="text_medium" style="border-top:1px solid #B3B3B3;">i18n("Select Article Version")</td> 
+                <td colspan="3" class="text_medium" style="border-top:1px solid #B3B3B3;">
+                    {SELECT_ELEMENT}
+                    {SET_AS_CURRENT_VERSION}
+                    {INFO_BUTTON_VERSION_SELECTION}
+                </td>
+            </tr>
+            
+            <tr valign="top">
+                <td class="text_medium" style="border-top:1px solid #B3B3B3;">{TITEL}</td>
+                <td colspan="3" class="text_medium" style="border-top:1px solid #B3B3B3;">{TITEL-FIELD}</td>
+            </tr>
+
+            <!-- plugin Advanced Mod Rewrite - edit by stese //-->
+            <tr valign="top">
+                <td class="text_medium">{URLNAME}</td>
+                <td colspan="3" class="text_medium">{URLNAME-FIELD}</td>
+            </tr>
+            <!-- end plugin Advanced Mod Rewrite //-->
+
+            <tr valign="top">
+                <td width="25%" class="text_medium">{DIRECTLINKTEXT}</td>
+                <td width="75%" colspan="3" class="text_medium">{DIRECTLINK}</td>
+            </tr>
+
+            <tr valign="top" style="display:{NEWARTSTYLE};">
+                <td width="25%" class="text_medium">{ARTIKELART}</td>
+                <td width="75%" colspan="3" class="text_medium">{ARTIKELARTSELECT}</td>
+            </tr>
+
+            <tr valign="top" style="display:{NEWARTSTYLE};">
+                <td class="text_medium">{ARTIKELID}</td>
+                <td class="text_medium">{ARTID}</td>
+                <td class="text_medium">{ZUORDNUNGSID}</td>
+                <td class="text_medium">{ALLOCID}</td>
+            </tr>
+
+            <tr valign="top" style="display:{NEWARTSTYLE};">
+                <td class="text_medium">{ERSTELLT}</td>
+                <td class="text_medium">{ERSTELLUNGS-DATUM}</td>
+                <td class="text_medium">{AUTHOR_CREATOR}</td>
+                <td class="text_medium">{AUTOR-ERSTELLUNGS-NAME}</td>
+            </tr>
+
+            <tr valign="top" style="display:{NEWARTSTYLE};">
+                <td class="text_medium">{LETZTE-AENDERUNG}</td>
+                <td class="text_medium">{AENDERUNGS-DATUM}</td>
+                <td class="text_medium">{AUTHOR_MODIFIER}</td>
+                <td class="text_medium">{AUTOR-AENDERUNG-NAME}</td>
+            </tr>
+
+            <tr valign="top" style="display:{NEWARTSTYLE};">
+                <td class="text_medium">{PUBLISHING_DATE_LABEL}</td>
+                <td class="text_medium">
+                    {PUBLISHING_DATE}
+		</td>
+                <td class="text_medium">{PUBLISHER}</td>
+                <td class="text_medium">{PUBLISHER_NAME}</td>
+            </tr>
+
+            <tr valign="top">
+                <td class="text_medium"><label for="checkbox_forwarding">{WEITERLEITUNG}</label></td>
+                <td valign="bottom" colspan="3" class="text_medium">
+                    {CHECKBOX}{URL}{CHECKBOX-NEWWINDOW}
+                    <label class="ui-helper-hidden-accessible" for="redirect_mode">{LABEL_REDIRECT_CODE}</label>
+                    <select id="redirect_mode" name="redirect_mode">{REDIRECT_OPTIONS}</select>
+                </td>
+            </tr>
+            <tr>
+                <td class="text_medium" valign="top">i18n("Time control")</td>
+                <td colspan="3" class="text_medium">
+                    <table class="genericEscape" border="0" cellspacing="0" cellpadding="0" style="max-width: 100%; width: 100%; min-width: 100%">
+                        <tr>
+                            <td valign="top" style="width: 1%; border:none;">
+                                <input type="checkbox" onclick="javascript:disableFunctionsOnTimeControl();" name="timemgmt" id="timemgmt" value="1" {TIMEMGMTCHECKED}>
+                            </td>
+                            <td style="width: 40%; border:none;" class="text_medium">
+                                <label for="timemgmt">i18n("Use time control")</label>
+                            </td>
+                            <td style="width: 59%;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="width: 1%;">&nbsp;</td>
+                            <td class="text_medium" style="width: 40%;">i18n("Start date"):</td>
+                            <td style="width: 59%;">
+                                <input class="short" type="text" name="datestart" id="datestart" onkeyup="disableFunctionsOnTimeControl();" onchange="disableFunctionsOnTimeControl();" value="{STARTDATE}" {SDOPTS} size="20" maxlength="40" class="text_medium">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="width: 1%;">&nbsp;</td>
+                            <td class="text_medium" style="width: 40%; border:none;">i18n("End date"):</td>
+                            <td style="width: 59%;">
+                                <input class="short" type="text" name="dateend" id="dateend" value="{ENDDATE}" {EDOPTS} size="20" maxlength="40" class="text_medium">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="width: 1%;">
+                                <input type="checkbox" id="time_move_cat" name="time_move_cat" value="1" {MOVETOCATCHECKED}>
+                            </td>
+                            <td class="text_medium" style="width: 40%;">
+                                <label for="time_move_cat">i18n("When expired, move to category"):</label>
+                            </td>
+                            <td style="width: 59%;">{MOVETOCATEGORYSELECT}</td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="width: 1%;">
+                                <input type="checkbox" id="time_online_move" name="time_online_move" value="1" {ONLINEAFTERMOVECHECKED}>
+                            </td>
+                            <td class="text_medium" colspan="2">
+                                <label for="time_online_move">i18n("Make online after move")</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td class="text_medium"><label for="online">{ONLINE}</label></td>
+                <td class="text_medium">{ONLINE-CHECKBOX}</td>
+                <td class="text_medium"><label for="is_start">{STARTARTIKEL}</label></td>
+                <td class="text_medium">{STARTARTIKEL-CHECKBOX}</td>
+            </tr>
+
+            <tr valign="top">
+                <td class="text_medium"><label for="searchable">{SEARCHABLE}</label></td>
+                <td colspan="3" class="text_medium">{SEARCHABLE-CHECKBOX}</td>
+            </tr>
+
+            <tr valign="top">
+                <td class="text_medium">{SORTIERUNG}</td>
+                <td colspan="3" class="text_medium">{SORTIERUNG-FIELD}</td>
+            </tr>
+
+            {NOTIFICATION_SYNCHRON}
+
+            <tr valign="top">
+                <td class="text_medium">{STRUKTUR}</td>
+                <td class="text_medium" style="padding: 0;" colspan="{STRUCTURE_COLSPAN}">
+                    {STRUKTUR-FIELD}
+                </td>
+                {SYNC}
+            </tr>
+
+            <tr valign="top">
+                <td class="text_medium">{SUMMARY}</td>
+                <td colspan="3" class="text_medium">{SUMMARY-INPUT}</td>
+            </tr>
+
+            {ADDITIONAL_ROWS}
+
+            <tr>
+                <td colspan="4" class="text_medium" align="right">
+                    <input id="saveart" accesskey="s" type="image" {BUTTONDISABLE} src="images/{BUTTONIMAGE}" title="{REASON}">
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+
+    </form>
+    {LOGTABLE_HEADLINE}
+    {LOGTABLE}
+
+<script type="text/javascript">
+var bNoArticle = {bNoArticle};
+if (bNoArticle) {
+    $("input#saveart").click(function() {
+        Con.multiLink(
+            'right_top', 'main.php?area=con&frame=3&idcat={iIdcat}&idtpl={iIdtpl}&display_menu={DISPLAY_MENU}&syncoptions={SYNCOPTIONS}&contenido=' + Con.sid + '&action=saveart&bNoArticle='+{bNoArticle}
+        );
+        Con.markSubmenuItem('c_1');
+        return true;
+    });
+}
+
+// Create a reference to the Article Object in frame 'right_top'
+var artObj = Con.getFrame('left_top').artObj;
+
+Con.markSubmenuItem('c_1');
+
+{DATAPUSH}
+
+function removeAssignments(idart, idcat) {
+    var url  = 'main.php?area=con_editart';
+    url += '&action=remove_assignments';
+    url += '&frame=4';
+    url += '&idart=' + idart;
+    url += '&idcat=' + idcat;
+    url += '&contenido=' + Con.sid;
+    window.location.href = url;
+}
+
+function disableFunctionsOnTimeControl() {
+    // CON-2134
+    // do not enable online and start article elements on frozen article
+    if (true === document.getElementById("timemgmt").disabled
+    && true === document.getElementById("online").disabled) {
+        return;
+    }
+
+    // Timecontrol enabled => disable Online and Startarticle
+    if (document.getElementById("timemgmt").checked == true) {
+        document.getElementById("is_start").checked = false;
+        document.getElementById("is_start").disabled = true;
+        if (document.getElementById("datestart").value != '') {
+            document.getElementById("online").checked = false;
+            document.getElementById("online").disabled = true;
+        }
+        $("#timemgmt").parent("td").parent("tr").nextAll("tr").css('display', '');
+    } else {
+        // Timecontrol disable => enable Online and Startarticle
+        document.getElementById("is_start").disabled = false;
+        document.getElementById("online").disabled = false;
+        $("#timemgmt").parent("td").parent("tr").nextAll("tr").css('display', 'none');
+    }
+
+    if (document.getElementById("datestart").value == '') {
+        document.getElementById("online").disabled = false;
+    }
+}
+
+(function(Con, $) {
+    $(function() {
+        
+        $('#copytobutton').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            copyto.idArtLangVersion.value=$('#selectVersionElement option:selected').val();copyto.submit();
+        });
+        
+        $('#publishing_date').datetimepicker({
+            buttonImage: '{PATH_TO_CALENDER_PIC}',
+            buttonImageOnly: true,
+            showOn: 'both',
+            dateFormat: 'yy-mm-dd',
+            disabled: {IS_DATETIMEPICKER_DISABLED}
+        });
+
+        $('#datestart').datetimepicker({
+            buttonImage: '{PATH_TO_CALENDER_PIC}',
+            buttonImageOnly: true,
+            showOn: 'both',
+            dateFormat: 'yy-mm-dd',
+            disabled: {IS_DATETIMEPICKER_DISABLED},
+            onClose: function(dateText, inst) {
+                var endDateTextBox = $('#dateend');
+                if (endDateTextBox.val() != '') {
+                    var testStartDate = new Date(dateText);
+                    var testEndDate = new Date(endDateTextBox.val());
+                    if (testStartDate > testEndDate) {
+                        endDateTextBox.val(dateText);
+                    }
+                } else {
+                    endDateTextBox.val(dateText);
+                }
+            },
+            onSelect: function(selectedDateTime) {
+                var start = $(this).datetimepicker('getDate');
+                $('#dateend').datetimepicker('option', 'minDate', new Date(start.getTime()));
+            }
+        });
+
+        $('#dateend').datetimepicker({
+            buttonImage: '{PATH_TO_CALENDER_PIC}',
+            buttonImageOnly: true,
+            showOn: 'both',
+            dateFormat: 'yy-mm-dd',
+            disabled:{IS_DATETIMEPICKER_DISABLED},
+            onClose: function(dateText, inst) {
+                var startDateTextBox = $('#datestart');
+                if (startDateTextBox.val() != '') {
+                    var testStartDate = new Date(startDateTextBox.val());
+                    var testEndDate = new Date(dateText);
+                    if (testStartDate > testEndDate) {
+                        startDateTextBox.val(dateText);
+                    }
+                } else {
+                    startDateTextBox.val(dateText);
+                }
+            },
+            onSelect: function(selectedDateTime) {
+                var end = $(this).datetimepicker('getDate');
+                $('#datestart').datetimepicker('option', 'maxDate', new Date(end.getTime()));
+            }
+        });
+
+        $("div#categorypath > a").click(function() {
+            var url = $(this).attr('href');
+            var params = Con.UtilUrl.getParams(url);
+            Con.multiLink(
+                'right_top', 'main.php?area=con&frame=3&idcat=' + params.idcat + '&idtpl=' + params.idtpl + '&display_menu={DISPLAY_MENU}&syncoptions={SYNCOPTIONS}&contenido=' + Con.sid,
+                'right_bottom', url,
+                'left_bottom', 'main.php?area=con&frame=2&idcat=' + params.idcat + '&idtpl=' + params.idtpl + '&contenido=' + Con.sid
+            );
+            return false;
+        });
+
+        // status code switch
+        var $checkForwarding = $('#checkbox_forwarding');
+
+        var _onCheckForwardingClick = function(event) {
+            if ($checkForwarding.is(':checked')) {
+                $('#redirect_mode').removeAttr('disabled');
+            } else {
+                $('#redirect_mode').prop('disabled', 'disabled');
+            }
+        };
+
+        $checkForwarding.click(_onCheckForwardingClick);
+
+        // set initial status code switch state
+        _onCheckForwardingClick();
+
+        disableFunctionsOnTimeControl();
+    });
+})(Con, Con.$);
+
+</script>
+
+</body>
+</html>
+<!--
+template.con_edit_form
+
+i18n("Time control")
+i18n("Use time control")
+i18n("Start date")
+i18n("End date")
+i18n("When expired, move to category")
+i18n("Make online after move")
+i18n("Synchronize this article to all selected languages")
+i18n("Bring this article in the selected languages online")
+i18n("Take this article in the selected languages offline")
+
+-->

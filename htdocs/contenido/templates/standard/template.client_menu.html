@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.client_menu.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+<body>
+
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+    <!-- BEGIN:BLOCK -->
+    <tr {ID} class="text_medium">
+        <td align="left" class="text_medium">{ICON}</td>
+        <td width="100%">{TEXT}</td><td align="right">{DELETE}</td>
+    </tr>
+    <!-- END:BLOCK -->
+
+</table>
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        // Register some events for rows
+        // @todo move this to rowMark.js
+        $("table tr").mouseover(function () {
+            row.over(this);
+        }).mouseout(function () {
+                    row.out(this);
+                }).click(function () {
+                    row.click(this);
+                });
+
+        // Mark element having the marked id value
+        if ($("#marked")) {
+            row.click($("#marked").get(0));
+        }
+    });
+})(Con, Con.$);
+
+// Function for deleting clients
+function deleteClient(idclient) {
+    var url_right_bottom  = Con.UtilUrl.build('main.php', {area: 'client', frame: 4});
+        url_top  = Con.UtilUrl.build('main.php', {area: 'client', frame: 3});
+        url_left_bottom  = Con.UtilUrl.build('main.php', {area: 'client', action: 'client_delete', frame: 2, idclientdelete: idclient});
+
+    Con.multiLink('right_top', url_top, 'right_bottom', url_right_bottom, 'left_bottom', url_left_bottom);
+}
+</script>
+</body>
+</html>

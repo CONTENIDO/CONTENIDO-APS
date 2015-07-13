@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.mycontenido_lastarticles.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <style type="text/css">
+    table.content th.col-first {
+        border: 1px solid #b3b3b3;
+        border-bottom-width: 0;
+    }
+    table.content th.col-mid   {
+        border: 1px solid #B3B3B3;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+    table.content th.col-last  {
+        border: 1px solid #B3B3B3;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+
+    table.content td.col-first {
+        border: 1px solid #b3b3b3;
+        border-top-width: 0;
+    }
+    table.content td.col-mid   {
+        border: 0 solid #b3b3b3;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+    table.content td.col-last  {
+        border: 0 solid #b3b3b3;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+    }
+    </style>
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+
+<body style="margin:10px">
+<!--
+<p class="text_medium">{LASTLOGIN}</p><br>
+<p class="text_medium"><b>i18n("Your clients"):</br></p>
+
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr><td align="right" class="text_medium"></td><td>
+        {CLIENTFORM}
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="middle" class="text_medium">
+                        {CLIENTSDROPDOWN}
+                    </td>
+                    <td valign="middle">
+                        <img src="images/spacer.gif" height="3"><br>
+                        <img src="images/spacer.gif" width="5">{OKBUTTON}
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </td></tr>
+</table>
+<br>
+-->
+
+<p class="text_medium">{LASTARTICLES}</p>
+
+<table class="generic" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <tr class="textg_medium">
+        <th nowrap="nowrap">i18n("Start")</th>
+        <th nowrap="nowrap">i18n("Title")</th>
+        <th nowrap="nowrap">i18n("Category")</th>
+        <th nowrap="nowrap">i18n("Created")</th>
+        <th nowrap="nowrap">i18n("Modified")</th>
+        <th nowrap="nowrap">i18n("Template")</th>
+        <th colspan="4" nowrap="nowrap">i18n("Info")</th>
+    </tr>
+
+    <!-- BEGIN:BLOCK -->
+    <tr id="{ROWID}" >
+        <td nowrap="nowrap" align="center">{START}</td>
+        <td width="50%" nowrap="nowrap">{ARTICLE}</td>
+        <td width="50%" nowrap="nowrap">{CATEGORY}</td>
+        <td nowrap="nowrap">{CREATED}</td>
+        <td nowrap="nowrap">{LASTMODIFIED}</td>
+        <td nowrap="nowrap">{TPLNAME}</td>
+        <td>{ONLINE}</td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+
+<script type="text/javascript">
+//iBox = new infoBox(2);
+function artSort(selObj) {
+    var url = '{SELF_URL}';
+    var i = selObj.selectedIndex;
+    var sortkey = selObj.options[i].value;
+    window.location.href = url + '&sort=' + sortkey;
+}
+
+{HELP}
+</script>
+
+</body>
+</html>
+<!--
+template.mycontenido_lastarticles
+
+i18n("Your clients")
+i18n("Start")
+i18n("Title")
+i18n("Category")
+i18n("Created")
+i18n("Modified")
+i18n("Template")
+i18n("Info")
+
+-->

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<!-- frameset -->
+
+<html>
+
+<head>
+
+    <title>:: ::{BACKEND_LABEL}:: :: CONTENIDO {VERSION} {LOCATION}</title>
+{_META_HEAD_CONTENIDO_}
+    <link rel="SHORTCUT ICON" href="{CONTENIDOPATH}">
+    <style type="text/css">
+    frameset, frame{border: none; margin: 0; padding: 0;}
+    </style>
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript">
+    window.name = "CONTENIDO_Backend";
+    </script>
+</head>
+
+<frameset rows="82,*" frameborder="0" framespacing="0">
+
+    <!-- Header -->
+    <frame name="header" src="{HEADER}" scrolling="no" noresize="noresize" frameborder="0">
+
+    <!-- Content -->
+    <frame name="content" src="{CONTENT}" scrolling="no" noresize="noresize" frameborder="0">
+
+</frameset>
+
+</html>

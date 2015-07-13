@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.client_edit.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+
+<body style="margin:10px">
+
+{FORM}
+<table class="generic" cellspacing="0" cellpadding="2" border="0">
+    <tr>
+        <th valign="top">{PROPERTY}</th>
+        <th valign="top" align="left">{VALUE}</th>
+    </tr>
+    <!-- BEGIN:BLOCK -->
+    <tr>
+        <td valign="top">{CATNAME}</td>
+        <td valign="top" align="left">{CATFIELD}</td>
+    </tr>
+    <!-- END:BLOCK -->
+    <tr>
+        <td valign="top" style="border-right-width:0;">&nbsp;</td>
+        <td valign="top" align="right"><a accesskey="c" href="{CANCELLINK}"><img border="0" src="images/but_cancel.gif" alt="{CANCELTEXT}" title="{CANCELTEXT}"></a><img src="images/spacer.gif" width="20"><input id="submit_button" accesskey="s" type="image" src="images/but_ok.gif" alt="{SUBMITTEXT}" title="{SUBMITTEXT}" border="0"></td>
+    </tr>
+</table>
+</form>
+
+<script type="text/javascript">
+(function(Con, $) {
+    var frame = Con.getFrame('left_bottom'),
+        idclient = '{IDCLIENT}';
+    if (frame && idclient) {
+        frame.location.href = Con.UtilUrl.replaceParams(frame.location.href, {idclient: idclient, action: null});
+    }
+
+    $(function() {
+        $("#submit_button").click(function(e) {
+            if ($("#clientname").val() == "") {
+                Con.showNotification("Error", "i18n("The client must have a name!")");
+                e.preventDefault();
+                return false;
+            }
+            if ($("#frontendpath").val() == "") {
+                Con.showNotification("Error", "i18n("The client must have a frontend path. This is where the client's files will be stored.")");
+                e.preventDefault();
+                return false;
+            }
+            if ($("#htmlpath").val() == "") {
+                Con.showNotification("Error", "i18n("Please enter a valid URL. It has to start with http://... or https://...")");
+                e.preventDefault();
+                return false;
+            }
+            if (!($("#htmlpath").val().indexOf("http://") == 0 || $("#htmlpath").val().indexOf("https://") == 0)) {
+                Con.showNotification("Error", "i18n("Please enter a valid URL. It has to start with http://... or https://...")");
+                e.preventDefault();
+                return false;
+            }
+            if ($("#htmlpath").val().length < "https://".length) {
+                Con.showNotification("Error", "i18n("Please enter a valid URL. It has to start with http://... or https://...")");
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+})(Con, Con.$);
+</script>
+
+</body>
+</html>
+
+<!--
+
+i18n("Please enter a valid URL. It has to start with http://... or https://...")
+i18n("The client must have a name!")
+i18n("The client must have a frontend path. This is where the client's files will be stored.")
+ -->
+

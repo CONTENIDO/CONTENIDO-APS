@@ -1,0 +1,248 @@
+[2014-12-12 12:45:28] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\index.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:29] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\ajaxmain.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:32] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\ajaxmain.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:33] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:33] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:34] [   INFO   ] cInvalidArgumentException thrown at line 491 of file C:\projects\workspace\conclaus-git\contenido\contenido\classes\class.registry.php.
+Exception message: Object ID must be greater than 0.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\classes\class.registry.php(149): cRegistry::_fetchItemObject('cApiLanguage', '0')
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\include.mycontenido.php(255): cRegistry::getLanguage()
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(203): include_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:36] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:39] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:40] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:40] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:41] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\scripts\articleObject.js.php(35): require('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:43] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:43] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:43] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:44] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:46] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:46] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:48] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:49] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:49] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2014-12-12 12:45:49] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:40] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\index.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:43] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\ajaxmain.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:45] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:45] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:47] [   INFO   ] cInvalidArgumentException thrown at line 491 of file C:\projects\workspace\conclaus-git\contenido\contenido\classes\class.registry.php.
+Exception message: Object ID must be greater than 0.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\classes\class.registry.php(149): cRegistry::_fetchItemObject('cApiLanguage', '0')
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\include.mycontenido.php(255): cRegistry::getLanguage()
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(203): include_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:47] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\ajaxmain.php(36): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:56] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:58] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:59] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+
+[2015-01-08 13:20:59] [   INFO   ] cInvalidArgumentException thrown at line 82 of file C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\classes\class.smarty.frontend.php.
+Exception message: cSmartyFrontend __construct Parameter 2 invalid.
+Call stack:
+#0 C:\projects\workspace\conclaus-git\contenido\contenido\plugins\smarty\includes\config.plugin.php(31): cSmartyFrontend->__construct(Array, NULL, true)
+#1 C:\projects\workspace\conclaus-git\contenido\contenido\includes\functions.includePluginConf.php(51): include_once('C:\projects\wor...')
+#2 C:\projects\workspace\conclaus-git\contenido\contenido\main.php(38): require_once('C:\projects\wor...')
+#3 {main}
+

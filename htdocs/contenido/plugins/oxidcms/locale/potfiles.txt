@@ -1,0 +1,15 @@
+./classes/class.mysql_table.php
+./classes/class.oxidcms.gui.php
+./classes/class.oxidcms.soap.helper.php
+./classes/class.paginator.php
+./classes/oxidcms_soapclient.php
+./includes/config.plugin.php
+./includes/functions.oxidcms.php
+./includes/include.oxidcms.chains.php
+./includes/include.oxidcms_right_bottom.php
+./plugin.xml
+./templates/template.oxidcms.product.tpl
+./templates/template.oxidcms.right.bottom.tpl
+./templates/template.right_bottom.html
+./xml/lang_de_DE.xml
+./xml/lang_en_US.xml

@@ -1,0 +1,24 @@
+<form method="post" action="main.php" name="contentallocation">
+    {HIDDENFIELDS}
+    <table border="0" cellpadding="2" cellspacing="0" width="500" class="borderB3 nobordert noborderr">
+        <tr class="text_medium fett bgcE2">
+            <td width="450" class="textg_medium borderB3 noborderl noborderb">
+                {CATEGORY}
+            </td>
+            <td width="50" class="textg_medium borderB3 noborderl noborderb">
+                &nbsp;
+            </td>
+        </tr>
+        <!-- BEGIN:BLOCK -->
+        <tr style="background-color: {BACKGROUND_COLOR};" onmouseover="row.over(this)" onmouseout="row.out(this)" onclick="row.click(this)">
+            <td class="borderB3 noborderl noborderb" style="padding-left: {ITEMINDENT} ;">
+                {ITEMNAME}
+            </td>
+            <td class="borderB3 noborderl noborderb">
+                {CHECKBOX}
+            </td>
+        </tr>
+        <!-- END:BLOCK -->
+    </table>
+    {DIV}
+</form>

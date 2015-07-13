@@ -1,0 +1,111 @@
+.cms_abstract_img {
+    margin: 2px 2px 0;
+    z-index: 2147483647 !important;
+}
+
+.cms_abstract {
+    background-color: #F1F1F1;
+    border: 1px solid #B3B3B3;
+    display: none;
+    font-size: 12px;
+    /*left: 50% !important;*/
+    padding: 5px;
+    /*top: 50% !important;*/
+    margin: -160px 0 0 -161px;
+    /*position: fixed !important;*/
+    z-index: 20000;
+}
+
+.cms_abstract * {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+.cms_abstract .close {
+    float: right;
+    margin-right: 6px;
+    margin-top: 5px;
+}
+
+.cms_abstract .tabs {
+    padding-top: 10px;
+}
+
+.cms_abstract .head {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.cms_abstract .head_sub {
+    clear: both;
+    font-style: italic;
+    padding: 10px 0 5px;
+    font-weight: bold;
+}
+.cms_abstract div + .head_sub {
+    padding-top: 15px;
+}
+
+.cms_abstract label {
+    display: block;
+    float: left;
+    width: 48%;
+}
+
+.cms_abstract input,
+.cms_abstract select {
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+.cms_abstract input {
+    width: 50%;
+}
+
+.cms_abstract input.file {
+    width: 50%;
+}
+
+.cms_abstract input[type="checkbox"] {
+    width: 20px;
+}
+
+.cms_abstract select {
+    width: 51%;
+}
+
+.cms_abstract .toolbar {
+    clear: both;
+    float: right;
+    margin: 5px 6px 5px 0;
+}
+
+.cms_abstract .menu {
+    clear: both;
+    list-style-type: none;
+    margin: 10px 0 0;
+    border-bottom: 1px solid #B3B3B3;
+    height: 22px;
+}
+
+.cms_abstract .menu li {
+    border: 1px solid #B3B3B3;
+    cursor: pointer;
+    line-height: 20px;
+    padding: 0 10px;
+    width: auto;
+    margin-top: 1px;
+    float: left;
+    margin-right: 4px;
+}
+
+.cms_abstract .menu li.active {
+    font-weight: bold;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.cms_abstract .checkbox_wrapper {
+    float: left;
+    width: 120px;
+}

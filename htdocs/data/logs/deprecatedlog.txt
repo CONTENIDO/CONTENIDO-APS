@@ -1,0 +1,10 @@
+Deprecated call: loadArticleContent() [class.articlelanguage.php(427)]: "This method is deprecated and is not needed any longer"
+	loadArticleContent() called in file include.con_content_list.php(712)
+	include() called in file include.con_content.action.php(20)
+	include_once() called in file main.php(191)
+
+Deprecated call: loadArticleContent() [class.articlelanguage.php(427)]: "This method is deprecated and is not needed any longer"
+	loadArticleContent() called in file include.con_content_list.php(712)
+	include() called in file include.con_content.action.php(20)
+	include_once() called in file main.php(191)
+

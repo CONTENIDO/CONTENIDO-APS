@@ -1,0 +1,213 @@
+2015-02-06 13:35:53    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => upload
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:55    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => downloads
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:55    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => contenido_diagramme
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:56    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => picture_gallery
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:57    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => teaser
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:57    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => picture_gallery
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:58    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => downloads
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:59    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => contenido_diagramme
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:35:59    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => upload
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:00    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => logos
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:09    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => logos
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:10    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => slider
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:11    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => teaser
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:11    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => downloads
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:11    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => contenido_diagramme
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-02-06 13:36:12    127.0.0.1        
+    Query String: 
+    Bad parameter: idcat
+    POST array: Array
+(
+    [ajax] => linkeditorfilelist
+    [idcat] => upload
+    [id] => 500
+    [idartlang] => 59
+    [contenido] => gp273251ontgruifqttiov67msi512i9
+)
+
+2015-03-09 12:59:34    127.0.0.1        
+    Query String: idart=32?force=1
+    Bad parameter: idart
+    POST array: Array
+(
+)
+
+2015-03-12 14:56:25    127.0.0.1        
+    Query String: idcat=64&lang=1?force=1
+    Bad parameter: lang
+    POST array: Array
+(
+)
+
+2015-03-12 14:57:19    127.0.0.1        
+    Query String: idcat=64&lang=1?force=1
+    Bad parameter: lang
+    POST array: Array
+(
+)
+

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.files_overview.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <link rel="stylesheet" type="text/css" href="styles/jquery/plugins/tipsy.css">
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/jquery/plugins/tipsy.js"></script>
+    <script type="text/javascript" src="scripts/registerTipsy.js"></script>
+    <script type="text/javascript">
+	function deleteFile(file) {
+	    var url = Con.UtilUrl.build("main.php", {
+	        area: "{JS_AREA}",
+	        action: "{JS_ACTION_DELETE}",
+	        frame: 4,
+	        delfile: file
+	    });
+	    Con.getFrame('right_bottom').location.href = url;
+	}
+</script>
+</head>
+<body>
+
+<table class="borderless" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <!-- BEGIN:BLOCK -->
+    <tr class="tooltip-north" original-title="{DESCRIPTION}" {ID} onmouseover="row.over(this)" onmouseout="row.out(this)" onclick="row.click(this)">
+        <td><img alt="" width="10" src="images/spacer.gif"></td>
+        <td>
+            <table width="100%" cellspacing="0" cellpadding="3" border="0">
+                <tr>
+                <td width="100%">{FILENAME}</td>
+                <td align="right">{DELETE}</td>
+                </tr>
+            </table>
+        </td>
+        <td><img alt="" width="5" src="images/spacer.gif"></td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        if ($("#marked")) {
+            row.click($("#marked")[0]);
+        }
+    });
+})(Con, Con.$);
+</script>
+
+</body>
+</html>

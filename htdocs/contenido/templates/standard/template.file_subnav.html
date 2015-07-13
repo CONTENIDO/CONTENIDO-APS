@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- template.file_subnav, @fixme: merge with template.subnav, template.subnav_blank -->
+<head>
+    <title>template.file_subnav.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/subnav.js"></script>
+</head>
+<body class="page_subnav">
+
+<div class="navcontainer">
+    <div class="frame_handle">
+        <img src="images/frame_handle_re.gif" alt="">
+        <img id="toggleimage" src="images/toggle_frame_right.gif" style="display:none;" alt="">
+    </div>
+    <ul id="navlist">
+        <!-- BEGIN:BLOCK -->
+        <li id="{ID}" data-name="{DATA_NAME}">{CAPTION}</li>
+        <!-- END:BLOCK -->
+    </ul>
+</div>
+
+<script type="text/javascript">
+(function(Con, $) {
+    var bActivateHistory = {ACTIVATE_HISTORY};
+
+    $(function() {
+        if (parent.parent.frames[0].name != "header") {
+            Con.getFrame("content").frameResize.init();
+            if (bActivateHistory) {
+                Con.Subnav.clicked($("#c_1 a:first")[0]);
+            } else {
+                Con.Subnav.init();
+            }
+        }
+        $("#toggleimage").click(function() {
+            Con.getFrame("content").frameResize.toggle();
+        });
+    });
+
+})(Con, Con.$);
+</script>
+
+</body>
+</html>

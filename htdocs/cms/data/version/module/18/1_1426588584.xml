@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xml:lang="de"><head><version_id>18_1_1426588584</version_id><type>module</type><date>2015-03-17 11:36:25</date><author/><client>1</client><created/><lastmodified/></head><body><Name><![CDATA[config_copyright_notice]]></Name><Type><![CDATA[content]]></Type><Error><![CDATA[none]]></Error><Description><![CDATA[Configuration of the copyright notice in the footer]]></Description><Deletable/><Template/><Static><![CDATA[0]]></Static><PackageGuid/><PackageData/><CodeOutput><![CDATA[&lt;?php
+
+/**
+ * description: copyright notice configurator
+ *
+ * @package Module
+ * @subpackage ConfigCopyrightNotice
+ * @version SVN Revision $Rev:$
+ *
+ * @author marcus.gnass@4fb.de
+ * @copyright four for business AG &lt;www.4fb.de&gt;
+ * @license http://www.contenido.org/license/LIZENZ.txt
+ * @link http://www.4fb.de
+ * @link http://www.contenido.org
+ */
+
+// assert framework initialization
+defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
+
+if (cRegistry::isBackendEditMode()) {
+
+    $text = &quot;CMS_HTML[1]&quot;;
+
+    // use smarty template to output header text
+    $tpl = cSmartyFrontend::getInstance();
+    $tpl-&gt;assign('label', mi18n(&quot;LABEL_COPYRIGHT&quot;));
+    $tpl-&gt;assign('text', $text);
+    $tpl-&gt;display('get.tpl');
+}
+
+?&gt;]]></CodeOutput><CodeInput/></body></version>

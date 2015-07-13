@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.mycontenido_settings.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <style type="text/css">
+    table#settings {border: 0; border-left:1px; border-bottom: 1px; border-color: {BORDERCOLOR}; border-style: solid;}
+    table#settings td.col-first {
+        border: 1px solid;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+    table#settings td.col-last {
+        border: 1px solid;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+    table#settings tr.row-last {background-color: #fff;}
+    table#settings tr.row-last td.col-first {border: 0; border-top: 1px; border-right: 0; border-color: {BORDERCOLOR}; border-style: solid; padding-left:{PADDING_LEFT}px;}
+    table#settings tr.row-last td.col-last {border: 0; border-top: 1px; border-right: 1px; border-color: {BORDERCOLOR}; border-style: solid;}
+    </style>
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+<body style="margin:10px">
+
+{FORM}
+<p>
+{ERROR}
+</p>
+<p class="text_medium">
+<b>{SETTINGSFOR}</b>
+</p>
+<table id="settings" cellspacing="0" cellpadding="2" border="0">
+    <!-- BEGIN:BLOCK -->
+    <tr class="{ROWNAME} text_medium row-first" style="background-color: {BGCOLOR};">
+        <td valign="top" class="col-first" style="border-color: {BORDERCOLOR}; padding-left:{PADDING_LEFT}px">{CATNAME}</td>
+        <td valign="top" class="col-last" style="border-color: {BORDERCOLOR};" align="left">{CATFIELD}</td>
+    </tr>
+    <!-- END:BLOCK -->
+    <tr class="{ROWNAME} text_medium row-last">
+        <td valign="top" class="col-first">&nbsp;</td>
+        <td valign="top" class="col-last" align="right">
+            <a accesskey="c" href="{CANCELLINK}"><img border="0" src="images/but_cancel.gif" alt="{CANCELTEXT}" title="{CANCELTEXT}"></a><img src="images/spacer.gif" width="20"><input accesskey="s" type="image" src="images/but_ok.gif" alt="{SUBMITTEXT}" title="{SUBMITTEXT}" border="0">
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

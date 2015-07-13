@@ -1,0 +1,51 @@
+
+<!-- template.con_editcontent.html -->
+<!-- @TODO Similar to template.con_content_list.html, merge them -->
+{_JS_HEAD_CONTENIDO_FULLHTML_}
+
+{JS_EDITCONTENT}
+
+<link rel="stylesheet" type="text/css" href="{_PATH_CONTENIDO_TINYMCE_CSS_}con_tiny.css">
+<link rel="stylesheet" type="text/css" href="{_PATH_CONTENIDO_FULLHTML_}styles/jquery/plugins/atooltip.css">
+<link rel="stylesheet" type="text/css" href="{_PATH_CONTENIDO_FULLHTML_}styles/includes/con_editcontent.css">
+<script type="text/javascript" src="{_PATH_CONTENIDO_FULLHTML_}scripts/jquery/plugins/atooltip.jquery.js"></script>
+
+<!-- tinyMCE -->
+{_WYSIWYG_JS_TAGS_}
+
+<script type="text/javascript">    
+(function(Con, $) {
+
+    // Configuration of tiny, when tiny is opened set event which stores original
+    // content to Con.Tiny.editDataOrg
+    var wysiwygSettings = {TINY_OPTIONS};
+
+    // Initialize/setup TinyMCE editor
+    Con.Tiny.tinymceInit(tinymce, wysiwygSettings, {
+        saveTitle: '{SAVE}',
+        saveImage: '{_PATH_CONTENIDO_FULLHTML_}images/but_save_tiny.gif',
+        closeTitle: '{CLOSE}',
+        closeImage: '{_PATH_CONTENIDO_FULLHTML_}images/but_close_tiny.gif',
+        useTiny: '{USE_TINY}',
+        backendUrl: '{BACKEND_URL}'
+    });
+
+    $(function() {
+        // Initialize CONTENIDO tiny module
+        Con.Tiny.init({
+            fileUrl: '{FILE}',
+            imageUrl: '{IMAGE}',
+            mediaUrl: '{MEDIA}',
+            frontendPath: '{FRONTEND}',
+            txtQuestion: '{QUESTION}',
+            idartlang: '{IDARTLANG}',
+            settings: wysiwygSettings
+        });
+
+        // Bind to some events like contenteditables click or window unload
+        Con.Tiny.bindEvents({useTiny: '{USE_TINY}'});
+    });
+
+})(Con, Con.$);
+</script>
+<!-- /template.con_editcontent.html -->

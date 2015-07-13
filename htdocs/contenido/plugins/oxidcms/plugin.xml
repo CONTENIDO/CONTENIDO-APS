@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin>
+
+    <general active="1">
+        <plugin_name>Oxidcms</plugin_name>
+        <plugin_foldername>oxidcms</plugin_foldername>
+        <uuid>76FCE85B-9C90-5A23-BCD4-50003D187A21</uuid>
+        <description>OXIDCMS</description>
+        <author>four for business AG</author>
+        <copyright>four for business AG</copyright>
+        <mail>info@4fb.de</mail>
+        <website>http://contenido.org</website>
+        <version>1.0.0</version>
+    </general>
+
+    <requirements php="5.2.3">
+        <contenido minversion="4.9.0" />
+    </requirements>
+	<contenido>
+
+		<areas>
+            <area menuless="1">oxidcms</area>
+        </areas>
+        <frames>
+            <frame area="oxidcms" filetype="main" name="oxidcms/includes/include.oxidcms_right_bottom.php" frameId="4" />
+        </frames>
+	 	<nav_sub>
+            <nav area="oxidcms" level="0" navm="3">oxidcms/xml/;navigation/main/oxidcms</nav>
+     	</nav_sub>
+</contenido>
+</plugin>

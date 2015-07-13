@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.system_purge.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <link rel="stylesheet" type="text/css" href="styles/system_purge.css">
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+
+<body style="margin: 10px;">
+    
+<div id="system_clear_info_box">
+    {INFO_MSG_BOX}
+</div>
+<div id="system_clear_error_box">
+    {ERR_MSG_BOX}
+</div>
+<div id="system_clear_error"></div>
+<form action="" method="post" name="frmSystemPurge" id="frmSystemPurge">
+    <div class="system_clear">
+      <div class="system_clear_header">
+        {TITLE}
+      </div>
+      <div class="system_clear_group clearfix">
+        <div class="leftCol">
+            {GROUP_CLIENT}
+        </div>
+        <div class="rightCol clearfix">
+            <fieldset style="margin-left: 10px;">
+                <legend>{CLIENT_CHOOSE}</legend>
+                <div class="system_clear_form_row clearfix">
+                    <input id="select_all_clients" class="input" name="selectClient" type="radio" value="all">
+                    <label for="select_all_clients" class="labelrightCol">{CLIENT_SELECT_ALL}</label>
+                </div>
+                <div class="system_clear_form_row clearfix">
+                    <input id="available_clients" class="input" name="selectClient" type="radio" value="list">
+                    <label for="available_clients" class="labelrightCol">{CLIENT_SELECT}</label>
+                </div>
+                <div class="system_clear_form_row" id="select_list_clients" style="display:none;">
+                    {SELECT_CLIENT}
+                 </div>
+            </fieldset>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_concode" class="input" name="conCode" type="checkbox" value="1">
+                <label for="checkbox_concode" class="labelrightCol">{CON_CODE}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_concatart" class="input" name="conCatArt" type="checkbox" value="1">
+                <label for="checkbox_concatart" class="labelrightCol">{CON_CAT_ART}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_clientcache" class="input" name="clientCache" type="checkbox" value="1">
+                <label for="checkbox_clientcache" class="labelrightCol">{CLIENT_CACHE}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_clientlog" class="input" name="clientLog" type="checkbox" value="1">
+                <label for="checkbox_clientlog" class="labelrightCol">{CLIENT_LOG}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_clienthistory" class="input" name="clientHistory" type="checkbox" value="1">
+                <label for="checkbox_clienthistory" class="labelrightCol">{CLIENT_HISTORY}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_clearhistory" class="input" name="keepHistory" type="checkbox" value="1">
+                <label for="checkbox_clearhistory" class="label_middle">{NUMBER_OF_HISTORY}: </label>
+                <input class="input" name="keepHistoryNumber" type="text" value="10" style="width: 25px;" maxlength="5">
+            </div>
+            
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_clearversioning" class="input" name="clearVersioning" type="checkbox" value="1">
+                <label for="checkbox_clearversioning" class="label_middle">{CLEAR_CONTENT_VERSIONING}</label>
+            </div>
+
+        </div>
+      </div>        
+      <div class="system_clear_group clearfix">
+        <div class="leftCol">
+            {GROUP_CONTENIDO}
+        </div>
+        <div class="rightCol clearfix">
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_coninuse" class="input" name="conInuse" type="checkbox" value="1" {DEACTIVATED}>
+                <label for="checkbox_coninuse" class="labelrightCol">{CON_INUSE}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_conlog" class="input" name="conLog" type="checkbox" value="1" {DEACTIVATED}>
+                <label for="checkbox_conlog" class="labelrightCol">{CON_LOG}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_concache" class="input" name="conCache" type="checkbox" value="1" {DEACTIVATED}>
+                <label for="checkbox_concache" class="labelrightCol">{CON_CACHE}</label>
+            </div>
+
+            <div class="system_clear_form_row clearfix">
+                <input id="checkbox_concronjobs" class="input" name="conCronjobs" type="checkbox" value="1" {DEACTIVATED}>
+                <label for="checkbox_concronjobs" class="labelrightCol">{CON_CRONJOB}</label>
+            </div>
+        </div>
+      </div>
+
+      <div class="system_clear_group clearfix">
+          <div class="bottom">
+              <input type="hidden" name="send" value="store">
+              <img id="imgFormSubmit" src="images/but_ok.gif" alt="{SUBMIT_TEXT}" border="0">
+          </div>
+      </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        $('#available_clients').click(function() {
+            if ($('#select_list_clients').css('display') != 'block') {
+                $('#select_list_clients').fadeIn('middle');
+            }
+        });
+
+        $('#select_all_clients').click(function() {
+            if ($('#select_list_clients').css('display') != 'none') {
+                $('#select_list_clients').fadeOut('middle');
+            }
+        });
+
+        $('input[name="clientHistory"]').change(function() {
+            if ($(this).attr('checked')) {
+                $('input[name="keepHistory"]').attr('checked', true);
+            } else {
+                $('input[name="keepHistory"]').attr('checked', false);
+            }
+        });
+
+        $('#imgFormSubmit').click(function() {
+            var iSelClient = $('input[name="selectClient"]:checked', '#frmSystemPurge').val();
+            var bSelClient = false;
+            var iActionSel = $('input[type="checkbox"]:checked').length;
+            var sErrMsg = '';
+            var bErr = false;
+
+            if ($.trim($('#system_clear_info_box').html()) != '') {
+                $('#system_clear_info_box').html('');
+            }
+
+            if (typeof iSelClient != 'undefined') {
+                if (iSelClient == 'all') {
+                    bSelClient = true;
+                } else if (iSelClient == 'list') {
+                    var countClient = $('#client_select option:selected', '#frmSystemPurge').length;
+                    bSelClient = countClient > 0;
+                }
+            } else {
+                bSelClient = false;
+            }
+            var bSelClientAction = false;
+            if (bSelClient == false) {
+                if ($('input[name="conCode"]:checked').length > 0) {
+                    bSelClientAction = true;
+                }
+                if ($('input[name="conCatArt"]:checked').length > 0) {
+                    bSelClientAction = true;
+                }
+                if ($('input[name="clientCache"]:checked').length > 0) {
+                    bSelClientAction = true;
+                }
+                if ($('input[name="clientLog"]:checked').length > 0) {
+                    bSelClientAction = true;
+                }
+                if ($('input[name="clientHistory"]:checked').length > 0) {
+                    bSelClientAction = true;
+                }
+            }
+
+            if (bSelClient == false && bSelClientAction == true) {
+                sErrMsg += "{ERR_MSG_SELECT_CLIENT}<br>";
+                bErr = true;
+            }
+
+            if (iActionSel == 0) {
+                sErrMsg += '{ERR_MSG_NO_ACTION}';
+                bErr = true;
+            }
+
+            if (bErr == false) {
+                Con.showConfirmation('{BOX_MESSAGE}', function() { document.frmSystemPurge.submit() });
+            } else {
+                $('#system_clear_error_box span').html(sErrMsg);
+                if ($('#system_clear_error_box').css('display') == 'none') {
+                    $('#system_clear_error_box').css('display', 'block');
+                }
+            }
+        });
+    });
+})(Con, Con.$);
+</script>
+
+</body>
+</html>

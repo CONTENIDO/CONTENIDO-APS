@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.tplcfg_edit_form.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <style type="text/css">
+    table.content td.col-1 {background-color:#e2e2e2;
+        border: 1px solid #b3b3b3;
+        border-right-width: 0;
+    }
+    table.content td.col-2 {background-color:#f1f1f1;padding-left:5px;
+        border: 1px solid #b3b3b3;
+        border-left-width: 0;
+    }
+    table.content td.module_config {
+        border: 1px solid #b3b3b3;
+        border-top-width: 0;
+        background-color:#fff;}
+    table.content td.module_config table td {padding:5px;vertical-align:top;}
+    </style>
+{_JS_HEAD_CONTENIDO_}
+</head>
+
+<body style="margin:10px">
+
+{CATEGORY}
+
+<p style="display:{DISPLAY_HEADER};font-weight:bold;">{HEADER}</p>
+
+<form name="tplcfgform" action="{FORMACTION}" id="tpl_form" method="post" enctype="multipart/form-data">
+
+    {HIDDEN}
+    <table class="content" cellspacing="0" cellpadding="2" border="0">
+        <tr>
+            <td class="text_medium col-1">{TEMPLATECAPTION}</td>
+            <td class="text_medium col-2">{TEMPLATESELECTBOX}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="images/spacer.gif" alt="" width="1" height="10"></td>
+        </tr>
+        <tr>
+            <td class="text_medium ">{LABLE_DESCRIPTION}</td>
+            <td class="text_medium  ">{DESCRIPTION}</td>
+        </tr>    <tr>
+            <td colspan="2"><img src="images/spacer.gif" alt="" width="1" height="10"></td>
+        </tr>
+
+        <!-- BEGIN:BLOCK -->
+        <tr>
+            <td colspan="2"><img src="images/spacer.gif" alt="" width="1" height="10"></td>
+        </tr>
+        <tr>
+            <td class="text_medium col-1">{MODULECAPTION}</td>
+            <td class="text_medium col-2">{MODULENAME}</td>
+        </tr>
+        <tr>
+            <td class="text_medium module_config" colspan="2">
+                {MODULECODE}
+            </td>
+        </tr>
+        <!-- END:BLOCK -->
+
+        <tr>
+            <td colspan="2"><img src="images/spacer.gif" alt="" width="1" height="10"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                {BUTTONS}
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<script type="text/javascript">
+    {SCRIPT}
+</script>
+
+{MARKSUBMENU}
+
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        $("div#categorypath > a").click(function() {
+            var url = $(this).attr('href'),
+                params = Con.UtilUrl.getParams(url);
+            Con.multiLink(
+                'right_top', 'main.php?area=con&frame=3&idcat=' + params.idcat + '&idtpl=' + params.idtpl + '&display_menu={DISPLAY_MENU}&syncoptions={SYNCOPTIONS}&contenido=' + Con.sid,
+                'right_bottom', url,
+                'left_bottom', 'main.php?area=con&frame=2&idcat=' + params.idcat + '&idtpl=' + params.idtpl + '&contenido=' + Con.sid
+            );
+            return false;
+        });
+    });
+})(Con, Con.$);
+</script>
+
+</body>
+</html>

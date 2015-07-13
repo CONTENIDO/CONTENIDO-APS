@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.lang_overview.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+    <style type="text/css">
+    table tbody {vertical-align: top;}
+    td.first {padding-left: 10px;}
+    </style>
+{_JS_HEAD_CONTENIDO_}
+
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+</head>
+<body>
+
+{RELOAD_SCRIPT}
+
+<table class="borderless" width="100%" cellspacing="0" cellpadding="2" border="0">
+
+    {NOTIFICATION}
+
+    <!-- BEGIN:BLOCK -->
+    <tr class="text_medium" {MARKED}>
+        <td width="100%" class="first">{LANGUAGE}</td>
+        <td>{ACTIVATEBUTTON}</td>
+        <td>{DELETEBUTTON}</td>
+    </tr>
+    <!-- END:BLOCK -->
+
+</table>
+
+<script type="text/javascript">
+
+function deleteLang(idlang) {
+    var url = Con.UtilUrl.build("main.php", {
+        area: "lang_edit",
+        action: "lang_deletelanguage",
+        frame: 4,
+        idlang: idlang,
+        targetclient: "{TARGETCLIENT}"
+    });
+
+    Con.getFrame('right_bottom').location.href = url;
+}
+
+(function(Con, $) {
+    $(function() {
+
+        function refreshLangCount() {
+            Con.getFrame('left_top').iLanguagecount = {LANG_COUNT};
+        }
+
+        if (!Con.getFrame('left_top') || !Con.getFrame('left_top').iLanguagecount) {
+            window.setTimeout(function() {
+                refreshLangCount();
+            }, 1000);
+        } else {
+            refreshLangCount();
+        }
+
+        // Register some events for rows
+        // ## @todo move this to rowMark.js
+        $("table tr").mouseover(function () {
+            row.over(this);
+        }).mouseout(function () {
+                    row.out(this);
+                }).click(function () {
+                    row.click(this);
+                });
+
+        // Mark element having the marked id value
+        if ($("#marked")) {
+            row.click($("#marked")[0]);
+        }
+        // ## @todo move this to rowMark.js
+    });
+})(Con, Con.$);
+
+</script>
+</body>
+</html>

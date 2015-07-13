@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.stat_overview.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+</head>
+<body style="margin:10px">
+
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+    <tr class="text_medium">
+        <td valign="top">{STATTITLE}</td>
+        <td valign="top" align="right">{DROPDOWN}{YEARMONTH}</td>
+    </tr>
+</table>
+
+<table class="generic" id="stats" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <tr>
+        <th colspan="5" style="padding-left:5px;">
+        <a class="black" href="javascript:collapseAll();"><img alt="i18n("Close all categories")" title="i18n("Close all categories")" src="images/close_all.gif">&nbsp;i18n("Close all categories")</a>
+        <span style="padding-left:15px;">&nbsp;</span>
+        <a class="black" href="javascript:expandAll();"><img alt="i18n("Open all categories")" title="i18n("Open all categories")" src="images/open_all.gif">&nbsp;i18n("Open all categories")</a>
+        </th>
+    </tr>
+
+    <tr>
+        <th style="background-color:#ffffff;" colspan="5">&nbsp;</th>
+    </tr>
+
+    <tr>
+        <th width="80%" style="padding-left:{TITLEPADDING_LEFT}px" nowrap>{TITLETEXT}</th>
+        <th align="right" nowrap>{TITLESTATUS}</th>
+        <th align="right" nowrap>{TITLENUMBEROFARTICLES}</th>
+        <th align="right" nowrap>{TITLETOTAL}</th>
+        <th align="right" nowrap>{TITLEINTHISLANGUAGE}</th>
+    </tr>
+    <!-- BEGIN:BLOCK -->
+    <tr id="{ROWNAME}" class="text_medium" style="display:{DISPLAY_ROW};" onmouseover="row.over(this)" onmouseout="row.out(this)" {ONCLICK}>
+        <td class="td_stats1" style="padding-left:{PADDING_LEFT}px;">{EXPAND} {ICON} <a style="text-decoration: none;" href="{ULR_TO_PAGE}" title="{PATH}" target="_blank">{TEXT}</a></td>
+        <td class="td_stats2">{STATUS}&nbsp;</td>
+        <td class="td_stats3">{NUMBEROFARTICLES}&nbsp;</td>
+        <td class="td_stats3">{TOTAL}&nbsp;</td>
+        <td class="td_stats3">{INTHISLANGUAGE}&nbsp;</td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+<br>
+<table class="generic" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <tr>
+        <th style="padding-left:{TITLEPADDING_LEFT}px" nowrap>{TITLETEXT}</th>
+        <th align="right" nowrap>{TITLENUMBEROFARTICLES}</th>
+        <th align="right" nowrap>{TITLETOTAL}</th>
+        <th align="right" nowrap>{TITLEINTHISLANGUAGE}</th>
+    </tr>
+    <tr>
+        <td width="80%" style="padding-left:{TITLEPADDING_LEFT}px" nowrap>{SUMTEXT}&nbsp;</td>
+        <td align="right" nowrap>{SUMNUMBEROFARTICLES}&nbsp;</td>
+        <td align="right" nowrap>{SUMTOTAL}&nbsp;</td>
+        <td align="right" nowrap>{SUMINTHISLANGUAGE}&nbsp;</td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+var sExpandString = 'i18n("Open category")';
+var sCollapseString = 'i18n("Close category")';
+var sCollapseButton = '{IMG_COLLAPSE}';
+var sExpandButton = '{IMG_EXPAND}';
+
+function top10Action(selObj) {
+    var url = '{SELF_URL}';
+    var i = selObj.selectedIndex;
+    var sortkey = selObj.options[i].value;
+
+    window.location.href = url + '&action=stat_show&displaytype=' + sortkey + '&yearmonth=' + document.hiddenValues.yearmonth.value;
+}
+
+function top10ActionYearly(selObj) {
+    var url = '{SELF_URL}';
+    var i = selObj.selectedIndex;
+    var sortkey = selObj.options[i].value;
+
+    window.location.href = url + '&action=stat_show&displaytype=' + sortkey + '&showYear=1&year=' + document.hiddenValues.yearmonth.value;
+}
+
+function collapseAll() {
+    var aStatrows = document.getElementsByTagName('tr');
+    for (var i = 0; i < aStatrows.length; i++) {
+        var aIds = aStatrows[i].id.split('_');
+
+        if (aIds.length > 1) {
+            aStatrows[i].style.display = 'none';
+        }
+
+        var oButton = aStatrows[i].getElementsByTagName('img')[0];
+        if (oButton && oButton.id == aStatrows[i].id+'_img') {
+            oButton.src = sExpandButton;
+            oButton.title = sExpandString;
+            oButton.alt = sExpandString;
+        }
+    }
+}
+
+function expandAll() {
+    var aStatrows = document.getElementsByTagName('tr');
+    var sDisplay = (Con.isMsie) ? 'block' : 'table-row';
+
+    for (var i = 0; i < aStatrows.length; i++) {
+        if (aStatrows[i].id) {
+            aStatrows[i].style.display = sDisplay;
+
+            var oButton = aStatrows[i].getElementsByTagName('img')[0];
+            if (oButton && oButton.id == aStatrows[i].id+'_img') {
+                oButton.src = sCollapseButton;
+                oButton.title = sCollapseString;
+                oButton.alt = sCollapseString;
+            }
+        }
+    }
+}
+
+function changeVisibility(sIdClicked, iLevel, iIdCat) {
+    var sDisplay = '';
+    var aIdsClicked = sIdClicked.split('_');
+
+    var oButton = document.getElementById (sIdClicked+'_img');
+
+    if (oButton.src == sExpandButton) {
+        oButton.src = sCollapseButton;
+        oButton.title = sCollapseString;
+        oButton.alt = sCollapseString;
+        sDisplay = (Con.isMsie) ? 'block' : 'table-row';
+    } else {
+        oButton.src = sExpandButton;
+        oButton.title = sExpandString;
+        oButton.alt = sExpandString;
+        sDisplay = 'none';
+    }
+
+    var aStatrows = document.getElementsByTagName('tr');
+    for (var i = 0; i < aStatrows.length; i++) {
+        var aIds = aStatrows[i].id.split('_');
+
+        if (aIds[iLevel] == iIdCat) {
+            if (sDisplay == 'none' && aIds.length > aIdsClicked.length) {
+                aStatrows[i].style.display = sDisplay;
+
+                var oButton = aStatrows[i].getElementsByTagName('img')[0];
+                if (oButton && oButton.id == aStatrows[i].id+'_img') {
+                    oButton.src = sExpandButton;
+                    oButton.title = sExpandString;
+                    oButton.alt = sExpandString;
+                }
+            } else if ((aIdsClicked.length+1) == aIds.length) {
+                aStatrows[i].style.display = sDisplay;
+            }
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
+<!--
+template.stat_overview
+
+i18n("Open category")
+i18n("Close category")
+i18n("Close all categories")
+i18n("Open all categories")
+
+-->

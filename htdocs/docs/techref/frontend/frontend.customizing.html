@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>CONTENIDO - Frontend customizing</title>
+    <link rel="stylesheet" href="../assets/techref.css" type="text/css" media="all">
+</head>
+
+<body>
+
+<div id="header">
+    <img src="../assets/conlogo.gif" alt="CONTENIDO Logo">
+    <h1>Frontend customizing</h1>
+</div>
+
+<div class="section">
+  <table class="info" border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td>Author</td>
+        <td>Björn Behrens (HerrB)</td>
+      </tr>
+      <tr>
+        <td>Created</td>
+        <td>20th September 2006</td>
+      </tr>
+      <tr>
+        <td>Audience</td>
+        <td>Site Administrators</td>
+      </tr>
+      <tr>
+        <td>Applies to</td>
+        <td>CONTENIDO 4.8.4 or later</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+<h2>Introduction</h2>
+Frontend customizing is a mechanism to customize various parameters of
+the frontend. There are not many settings you can do, as this mechanism
+is relatively new. However, this mechanism will be used more and more
+in the future.
+</div>
+
+<div class="section">
+<h2>How it works</h2>
+Customizing CONTENIDO settings is very easy and can be done via the
+system or client customizing settings.<br>
+<br>
+Important: User settings have precendence before group settings. User
+settings always override group settings. If the user is added to more
+than one group, the result is undefined. Make sure that your groups
+don't override each other.
+</div>
+
+<div class="section">
+<h2><span style="font-weight: bold;">Common parameters</span></h2>
+<table class="full" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Area/Type</th>
+      <th>Property</th>
+      <th>Value (Description)</th>
+      <th style="width: 185px;">Applies to</th>
+    </tr>
+    <tr>
+      <td>login_error_page</td>
+      <td>idcatart</td>
+      <td>If specified, then a user who is logged out or tries to open a protected
+      category if not logged in will get redirected to the page specified by idcatart. This setting overrides other
+      login_error_page settings.</td>
+      <td>Clients, System</td>
+    </tr>
+    <tr>
+      <td>login_error_page</td>
+      <td>idcat</td>
+      <td>If specified, then a user who is logged out or tries to open a protected
+      category if not logged in will get redirected to the category specified by idcat. You can specify idcat
+      and/or idart (see next setting).</td>
+      <td>Clients, System</td>
+    </tr>
+    <tr>
+      <td>login_error_page</td>
+      <td>idart</td>
+      <td>If specified, then a user who is logged out or tries to open a protected
+      category if not logged in will get redirected to the article specified by idart. You can specify idcat
+      and/or idart (see previous setting).</td>
+      <td>System, Clients</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>

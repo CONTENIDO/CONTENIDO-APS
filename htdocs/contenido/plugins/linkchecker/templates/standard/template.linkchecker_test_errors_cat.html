@@ -1,0 +1,18 @@
+<tr class="text_medium bgcwhite" onmouseover="row.over(this)" onmouseout="row.out(this)" onclick="row.click(this)">
+    <td valign="top" class="noborder borderrB5 width20 tooltip" title="{ERRORS_CATNAME}">
+        <a href="{URL_FRONTEND}front_content.php?idcat={ERRORS_CATID}">{ERRORS_CATNAME_SHORT}</a>
+        ({ERRORS_CATID})
+    </td>
+    <td valign="top" class="noborder borderrB5 width20 tooltip" title="{ERRORS_ARTICLE}">
+        {ERRORS_ARTICLE_SHORT} ({ERRORS_ARTID})
+    </td>
+    <td valign="top" class="noborder borderrB5 width25 tooltip" title="{ERRORS_LINK}">
+        {ERRORS_LINK_SHORT}
+    </td>
+    <td valign="top" class="noborder borderrB5 width25 tooltip" title="{ERRORS_ERROR_TYPE_HELP}">
+        {ERRORS_ERROR_TYPE}
+    </td>
+    <td valign="top" class="noborder pdr5 tgcenter width10">
+        <a href="{_PATH_CONTENIDO_FULLHTML_}main.php?area=linkchecker&frame=4&contenido={_SID_}&mode={MODE}&whitelist={ERRORS_LINK_ENCODE}"><img src="{_PATH_CONTENIDO_FULLHTML_}images/folder_new.gif" alt="" border="0"></a>
+    </td>
+</tr>

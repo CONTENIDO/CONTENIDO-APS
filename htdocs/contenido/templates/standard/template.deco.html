@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--
+NOTE: We don't parse this template and we don't use common assets like jQuery, contenido.js, etc. here.
+-->
+<head>
+    <title>template.deco.html</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/contenido.css">
+</head>
+
+<body class="page_deco">
+
+<div class="frame_handle">
+    <img src="../../images/frame_handle_li.gif" alt="">
+    <img id="toggleimage" src="../../images/toggle_frame_left.gif" alt="">
+</div>
+
+<script type="text/javascript">
+(function() {
+    var elem = document.getElementById('toggleimage');
+    elem.onclick = function() {
+        window.top.content.frameResize.toggle();
+    }
+})();
+</script>
+
+</body>
+</html>

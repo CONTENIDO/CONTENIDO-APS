@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CONTENIDO UserForum\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-03-13 10:49+0100\n"
+"Last-Translator: Claus Schunk <claus.schunk@4fb.de>\n"
+"Language-Team: Claus Schunk <claus.schunk@4fb.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-KeywordsList: i18n\n"
+"X-Poedit-SearchPath-0: \n"
+
+
+; class.article_forum_right_bottom.php
+
+msgid "STATUS"
+msgstr "State"
+
+msgid "EDIT"
+msgstr "edit"
+
+msgid "SAVE"
+msgstr "save"
+
+msgid "DELETE"
+msgstr "delete"
+
+msgid "USER"
+msgstr "name"
+
+msgid "EMAIL"
+msgstr "email"
+
+msgid "LIKE"
+msgstr "likes"
+
+msgid "DISLIKE"
+msgstr "dislikes"
+
+msgid "DATE"
+msgstr "date"
+
+msgid "COMMENT"
+msgstr "comment"
+
+msgid "QUOTE"
+msgstr "qoute"
+
+msgid "TIME"
+msgstr "created"
+
+msgid "EDITDAT"
+msgstr "last edit"
+
+msgid "EDITEDBY"
+msgstr "edited from"
+
+msgid "SETONLINE"
+msgstr "set comment online"
+
+msgid "SETOFFLINE"
+msgstr "set comment offline"
+
+msgid "AT"
+msgstr "at"
+
+msgid "Clock"
+msgstr "o clock"
+
+msgid "FORUM_POST"
+msgstr "comments"
+
+msgid "ACTIONS"
+msgstr "actions"
+
+msgid "EDITED"
+msgstr "last edit at"
+
+msgid "FROM"
+msgstr "from"
+
+msgid "PARAMETER"
+msgstr "parameter"
+
+msgid "CONTENT"
+msgstr "content"
+
+msgid "MODMODE"
+msgstr "With active moderator mode you can moderate the newest comments here"
+
+; class.article_forum_left_bottom.php
+
+msgid "NOENTRY"
+msgstr "no entries available" 
+
+msgid "DELETE_COMMENTS"
+msgstr "delete comments"
+
+msgid "ALLDELETEFROMCAT"
+msgstr "delete all comments from this article ?"
+
+msgid "ARTICLES"
+msgstr "articles"
+
+msgid "ALLDELETEFROMCATHIER"
+msgstr "delete comments inclusive subcomments ?"
+
+; class.content.type.user_forum.php
+
+msgid "ADMINISTRATION"
+msgstr "administration userform"
+
+msgid "MODEMAIL"
+msgstr "email address moderator"
+
+msgid "ACTIVATEMOD"
+msgstr "moderator forum"
+
+msgid "EDITABLE"
+msgstr "subcomments allowed"
+
+; class.article_forum_collection.php
+
+msgid "MODSETTINGS"
+msgstr "settings"
+
+msgid "COMMENT"
+msgstr "comment"
+
+msgid "USER"
+msgstr "name"
+
+msgid "EMAIL"
+msgstr "email"
+
+msgid "NEWENTRYTEXT"
+msgstr "new comment with following content"

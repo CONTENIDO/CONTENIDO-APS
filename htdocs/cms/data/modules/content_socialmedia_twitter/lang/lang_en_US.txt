@@ -1,0 +1,15 @@
+BORDER_COLOR=Border color (in px)
+DARK_THEME=Dark Theme
+HEIGHT=Height (in px)
+LABEL_RELATED=Recommended accounts
+LIGHT_THEME=Light Theme
+LINK_COLOR=Link color (in #)
+OVERVIEW=Twitter-Social-Media-Configuration
+RELATEDEXPLANATION_HELP=Define recommanded Twitter users.
+RELATED_EXPLANATION=contenido, twitter, ...
+SAVE=Save
+SHOWREPLIES_HELP=Show replies from configured Twitter user to other users?
+SHOW_REPLIES=Show replies
+THEME=Theme
+TWITTERNAME=Username
+WIDTH=Width (in px)

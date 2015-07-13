@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.grouprights_memberlist.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/infoBox.js"></script>
+    <script type="text/javascript">
+    Con.getFrame('left_bottom').location.reload();
+    </script>
+</head>
+<body style="margin:10px">
+
+{FORM}
+<div style="height:10px;"></div>
+<table id="stats" class="generic" cellspacing="0" cellpadding="2" border="0">
+    <!-- BEGIN:BLOCK -->
+    <tr class="{ROWNAME} {CLASS}" style="background-color: {BGCOLOR};">
+        <td valign="top" style="padding-left:{PADDING_LEFT}px">{CATNAME}</td>
+        <td valign="top" style="" align="left">{CATFIELD}</td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+</form>
+</body>
+</html>

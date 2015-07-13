@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>template.upl_dirs_overview.html</title>
+{_META_HEAD_CONTENIDO_}
+{_CSS_HEAD_CONTENIDO_}
+{_JS_HEAD_CONTENIDO_}
+    <script type="text/javascript" src="scripts/rowMark.js"></script>
+    <script type="text/javascript" src="scripts/parameterCollector.js"></script>
+</head>
+<body>
+
+<p>{WARNING}</p>
+{CATBROWSER}
+
+<table width="87%" style="margin:10px 10px 10px 17px;" cellspacing="0" cellpadding="0" border="0">
+    <!-- BEGIN:BLOCK -->
+    <tr id="{ID_PATH}" data-path="{DATA_PATH}" onmouseover="upl.over(this)" onmouseout="upl.out(this)" onclick="upl.click(this)">
+        <td style="padding-left: {INDENT}px">
+            <table style="margin-top:-1px;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td align="left" valign="top" class="text_medium" nowrap="nowrap">{COLLAPSE}{DIRNAME}</td>
+                    <td align="right" nowrap="nowrap">{EDITBUTTON}{DELETEBUTTON}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+
+<script type="text/javascript">
+
+var idPath = '{ID_PATH}';
+
+function refreshMenu() {
+    var frame = Con.getFrame('left_top');
+
+    if (frame.document.getElementById('caption2')) {
+        frame.document.getElementById('caption2').innerHTML = idPath;
+    }
+
+    if (frame.document.newdir) {
+        frame.document.newdir.selectedfile.value = idPath;
+        frame.document.newdir.path.value = idPath;
+    }
+}
+
+function deleteDirectory(path) {
+    var url = Con.UtilUrl.build('main.php', {
+        area: 'upl',
+        action: 'upl_delete',
+        frame: 2,
+        path: path
+    });
+    url += {APPENDPARAMETERS};
+    window.location.href = url;
+}
+
+(function(Con, $) {
+    $(function() {
+        if (idPath != '' && $('#' + idPath)) {
+            upl.click($('#' + idPath)[0]);
+        }
+
+/*
+    <a title="' . i18n("Delete directory") . '" href="javascript:void(0)" onclick="event.cancelBubble=true;Con.showConfirmation(&quot;' . i18n("Do you really want to delete the following directory:") . '<b>' . $file . '</b>' . '&quot;, function() { deleteDirectory(&quot;' . $pathstring . '&quot;); });return false;">
+
+*/
+        $('.jsDelete').click(function(e) {
+            e.stopPropagation();
+            var deleteMsg = "{DELETE_MSG}";
+            var path = $(this).closest('[data-path]').data('path');
+            Con.showConfirmation(deleteMsg.replace('{path}', path), function() {
+                deleteDirectory(path);
+            });
+            return false;
+        });
+
+        var myLoc = window.location.href;
+        if (myLoc.indexOf('action=upl_delete') != -1) {
+            $('body', Con.getFrame('right_bottom').document).html('');
+            $('#navlist', Con.getFrame('right_top').document).remove();
+            $('.root').click();
+        }
+    });
+})(Con, Con.$);
+
+</script>
+</body>
+</html>

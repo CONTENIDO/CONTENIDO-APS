@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CONTENIDO XML language file
+
+NOTE: Comments below with i18n() are used for translation purposes and the are
+      required for the parser to detect/extract text to translate.
+
+gettext:
+i18n("start article")
+i18n("normal article")
+i18n("start article with redirection")
+i18n("redirection")
+i18n("active article with time control")
+i18n("inactive article with time control")
+i18n("category")
+i18n("inactive category")
+i18n("inactive category without any active start article")
+i18n("category without any active start article")
+i18n("protected category")
+i18n("protected category without any active start article")
+i18n("active synchronized category")
+i18n("inactive synchronized category")
+
+-->
+<legend>
+    <article>
+        <imgsrc>images/isstart1.gif</imgsrc>
+        <description>start article</description>
+    </article>
+    <article>
+        <imgsrc>images/isstart0.gif</imgsrc>
+        <description>normal article</description>
+    </article>
+    <article>
+        <imgsrc>images/isstart1r.gif</imgsrc>
+        <description>start article with redirection</description>
+    </article>
+    <article>
+        <imgsrc>images/isstart0r.gif</imgsrc>
+        <description>redirection</description>
+    </article>
+    <article>
+        <imgsrc>images/but_time_2.gif</imgsrc>
+        <description>active article with time control</description>
+    </article>
+    <article>
+        <imgsrc>images/but_time_1.gif</imgsrc>
+        <description>inactive article with time control</description>
+    </article>
+    <category>
+        <imgsrc>images/folder_on.gif</imgsrc>
+        <description>category</description>
+    </category>
+    <category>
+        <imgsrc>images/folder_off.gif</imgsrc>
+        <description>inactive category</description>
+    </category>
+    <category>
+        <imgsrc>images/folder_off_error.gif</imgsrc>
+        <description>inactive category without any active start article</description>
+    </category>
+    <category>
+        <imgsrc>images/folder_on_error.gif</imgsrc>
+        <description>category without any active start article</description>
+    </category>
+    <category>
+        <imgsrc>images/folder_on_locked.gif</imgsrc>
+        <description>protected category</description>
+    </category>
+    <category>
+        <imgsrc>images/folder_on_error_locked.gif</imgsrc>
+        <description>protected category without any active start article</description>
+    </category>
+    <category>
+        <imgsrc>images/but_sync_cat.gif</imgsrc>
+        <description>active synchronized category</description>
+    </category>
+    <category>
+        <imgsrc>images/but_sync_cat_off.gif</imgsrc>
+        <description>inactive synchronized category</description>
+    </category>
+</legend>

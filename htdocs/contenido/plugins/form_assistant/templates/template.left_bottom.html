@@ -1,0 +1,16 @@
+<!-- form_assistant/templates/template.left_bottom.html -->
+
+<script type="text/javascript">
+(function(Con, $) {
+    var formAssistant = Con.namespace('Con.Plugin.FormAssistant');
+    formAssistant.translations = {I18N};
+    
+    $('.in_use_link').live('click', function() {
+    	Con.showNotification("{dialog_title}", $(this).attr("data-dialog-text"), null, true);
+    })
+})(Con, Con.$);
+</script>
+
+{menu}
+
+<!-- /form_assistant/templates/template.left_bottom.html -->

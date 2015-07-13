@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xml:lang="de"><head><version_id>16_1_1426588627</version_id><type>module</type><date>2015-03-17 11:37:07</date><author/><client>1</client><created/><lastmodified/></head><body><Name><![CDATA[config_social_media]]></Name><Type><![CDATA[content]]></Type><Error><![CDATA[none]]></Error><Description><![CDATA[Social media configurator (i. e. Facebook, Twitter)]]></Description><Deletable/><Template/><Static><![CDATA[0]]></Static><PackageGuid/><PackageData/><CodeOutput><![CDATA[&lt;?php
+
+/**
+ * description: social media configurator
+ *
+ * @package Module
+ * @subpackage ConfigSocialMedia
+ * @version SVN Revision $Rev:$
+ *
+ * @author marcus.gnass@4fb.de
+ * @copyright four for business AG &lt;www.4fb.de&gt;
+ * @license http://www.contenido.org/license/LIZENZ.txt
+ * @link http://www.4fb.de
+ * @link http://www.contenido.org
+ */
+
+// assert framework initialization
+defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
+
+if (cRegistry::isBackendEditMode()) {
+
+    // get links from content type TEXT with different indexes
+    $items = array(
+        'rss' =&gt; array(
+            'name' =&gt; mi18n(&quot;NAME_RSS&quot;),
+            'link' =&gt; &quot;CMS_TEXT[1]&quot;
+        ),
+        'facebook' =&gt; array(
+            'name' =&gt; mi18n(&quot;NAME_FACEBOOK&quot;),
+            'link' =&gt; &quot;CMS_TEXT[2]&quot;
+        ),
+        'googleplus' =&gt; array(
+            'name' =&gt; mi18n(&quot;NAME_GOOGLEPLUS&quot;),
+            'link' =&gt; &quot;CMS_TEXT[3]&quot;
+        ),
+        'twitter' =&gt; array(
+            'name' =&gt; mi18n(&quot;NAME_TWITTER&quot;),
+            'link' =&gt; &quot;CMS_TEXT[4]&quot;
+        ),
+        'xing' =&gt; array(
+            'name' =&gt; mi18n(&quot;NAME_XING&quot;),
+            'link' =&gt; &quot;CMS_TEXT[5]&quot;
+        )
+    );
+
+    // use smarty template to output header text
+    $tpl = cSmartyFrontend::getInstance();
+    $tpl-&gt;assign('label', mi18n(&quot;LABEL_SOCIAL_MEDIA&quot;));
+    $tpl-&gt;assign('items', $items);
+    $tpl-&gt;display('get.tpl');
+}
+
+?&gt;]]></CodeOutput><CodeInput/></body></version>

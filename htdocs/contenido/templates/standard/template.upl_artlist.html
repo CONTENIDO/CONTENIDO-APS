@@ -1,0 +1,95 @@
+<style type="text/css">
+#use_category {
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 1px solid #B3B3B3;
+    background-color: #F4F4F7;
+}
+#use_category img {
+    padding-right: 4px;
+}
+
+#article_list .article {
+    cursor: pointer;
+}
+#article_list .article img {
+    text-align: center;
+}
+</style>
+
+<div id="use_category">
+    <a href="javascript://">
+        <img class="vAlignMiddle" alt="i18n("Use this category")" title="i18n("Use this category")" src="images/folder_movedown.gif">
+    </a>
+    {CATSTR}
+</div>
+
+<table id="article_list" class="generic" width="100%" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+        <th>i18n("Article")</th>
+        <th width="100%">i18n("Title")</th>
+        <th>i18n("Modified")</th>
+        <th>i18n("Created")</th>
+        <th>i18n("Online")</th>
+    </tr>
+    <!-- BEGIN:BLOCK -->
+    <tr class="article" data-articlelink="{ARTLINK}">
+        <td class="nowrap">
+            <img class="vAlignMiddle" src="images/isstart{ISSTART}.gif" alt="">
+        </td>
+        <td class="nowrap">
+            {TITLE}
+        </td>
+        <td class="nowrap">
+            {MODIFIED}
+        </td>
+        <td class="nowrap">
+            {CREATED}
+        </td>
+        <td class="nowrap">
+            <img class="vAlignMiddle" src="images/{ONLINE}.gif" alt="">
+        </td>
+    </tr>
+    <!-- END:BLOCK -->
+</table>
+<script type="text/javascript">
+(function(Con, $) {
+    $(function() {
+        // On "Use this category" click
+        $("#use_category a").click(function() {
+            // fix for IE11 popup:
+            // selecting link with tiny out of popup does not work with Con.getFrame in IE11
+            // reverting to the old call solves this problem
+
+
+            //Con.getFrame('left_top').document.getElementById('selectedfile').value='{CATLINK}';
+            parent.parent.frames['left'].frames['left_top'].document.getElementById('selectedfile').value='{CATLINK}';
+            window.returnValue = '{CATLINK}';
+            window.close();
+        });
+
+        // On article list table row click
+        $("#article_list").delegate(".article", "click", function() {
+            var artLink = $(this).data("articlelink");
+            // fix for IE11 popup:
+            // selecting link with tiny out of popup does not work with Con.getFrame in IE11
+            // reverting to the old call solves this problem
+           //Con.getFrame('left_top').document.getElementById('selectedfile').value=artLink;
+           parent.parent.frames['left'].frames['left_top'].document.getElementById('selectedfile').value=artLink;
+           window.returnValue = artLink;
+            window.close();
+        });
+    });
+})(Con, Con.$);
+</script>
+<!--
+template.upl_artlist
+
+i18n("Use this category")
+i18n("Article")
+i18n("Title")
+i18n("Modified")
+i18n("Created")
+i18n("Online")
+
+-->

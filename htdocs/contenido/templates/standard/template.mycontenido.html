@@ -1,0 +1,58 @@
+<div class="right_content_box">
+    <span class="text_medium">{WELCOME}</span>
+    <hr class="sep">
+    <span class="text_medium text_gray sep">{LASTLOGIN}</span>
+
+    <div id="welcome_left">
+        <!-- CLIENTS -->
+        <div id="mandanten" class="content_box_welcome">
+            <h2 class="content_box">i18n("Available clients"):</h2>
+            <form style="margin: 0" name="clientselect" method="post" target="_top" action="index.php?contenido=1">
+                <div>
+                    {CLIENTSDROPDOWN}<span class="vAlignMiddle form_image">{OKBUTTON}</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- MY CONTENIDO -->
+        <div id="my_contenido" class="content_box_welcome">
+            <h2 class="content_box">My CONTENIDO:</h2>
+            <ul class="welcome">
+                <li class="welcome">{MYCONTENIDO_TASKS}</li>
+                <li class="welcome">{MYCONTENIDO_SETTINGS}</li>
+            </ul>
+        </div>
+
+        <!-- USER ONLINE -->
+        <div id="user_online" class="content_box_welcome">
+            <h2 class="content_box">i18n("Currently") {NUMBER} i18n("Users online"):</h2>
+            <ul class="welcome">
+                {USER_ONLINE}
+            </ul>
+        </div>
+
+        <!-- CONTACT PERSON -->
+        <div id="contact_admin" class="content_box_welcome">
+            <h2 class="content_box">i18n("Contact System Administrators"):</h2>
+            <ul class="welcome">
+                {ADMIN_EMAIL}
+                <!--  <li class="welcome">{MAIL_CLIENT}</li> -->
+            </ul>
+        </div>
+    </div> <!-- welcome_left -->
+
+    <div id="welcome_right">
+        <div id="messageboard">
+            {UPDATENOTIFICATION}
+        </div>
+    </div>
+</div>
+<!--
+template.mycontenido
+
+i18n("Available clients")
+i18n("Currently")
+i18n("Users online")
+i18n("Contact System Administrators")
+
+-->

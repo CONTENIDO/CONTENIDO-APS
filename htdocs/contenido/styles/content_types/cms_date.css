@@ -1,0 +1,20 @@
+.cms_date .date_timestamp {
+    border: 1px dashed #CCC;
+    display: block;
+    width: 200px;
+}
+
+.cms_date .ui-datepicker-trigger {
+    cursor: pointer;
+    margin: 2px 2px 0;
+    z-index: 10000;	
+}
+
+.cms_date .ui-datepicker {
+    z-index: 2147483647 !important;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    text-indent: 37px;
+}
