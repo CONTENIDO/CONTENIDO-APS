@@ -98,6 +98,10 @@ class APS {
         $values = self::_buildParams($vars);
         self::_writeSetupFile($values, $paths, $setup);
         self::_runAutoInstaller($vars['WEB__setup_DIR'], $paths);
+
+        $fh = fopen($paths['installationPath'] . 'http_path.txt', 'w');
+        fwrite($fh, $values['HTTP_PATH']);
+        fclose($fh);
     }
 
     /**
@@ -216,12 +220,17 @@ class APS {
 //            "'http"      => $vars['SETTINGS_http_root_path']
         );
 
+        $values = self::_buildParams($GLOBALS['_SERVER']);
+
         $path = $vars['argv'][0];
 
         $paths = array(
             'tempPath'         => str_replace('/scripts/configure', '/htdocs/setup/', $path),
             'installationPath' => strip_tags($vars['WEB__contenido_DIR']) . '/'
         );
+
+        // old http_path
+        $fePath = file_get_contents($paths['installationPath'] . 'http_path.txt');
 
         // read example file
         $file = file_get_contents($paths['installationPath'] . '../data/config/production/config.php');
@@ -238,8 +247,36 @@ class APS {
             }
         }
 
+        $file = preg_replace("/" . preg_quote($fePath, '/') . "/", $values['HTTP_PATH'], $file);
+
+
         fwrite($fh, $file);
         fclose($fh);
+
+
+        error_log('FE: ');
+        error_log(preg_quote($fePath, '/'));
+        error_log('FE: ');
+        // read example file
+        $file = file_get_contents($paths['installationPath'] . '../data/config/production/config.clients.php');
+
+        $fh = fopen($paths['installationPath'] . '../data/config/production/config.clients.php', 'w');
+
+        $file = preg_replace("/" . preg_quote($fePath, '/') . "/", $values['HTTP_PATH'], $file);
+
+        fwrite($fh, $file);
+        fclose($fh);
+
+        $fh = fopen($paths['installationPath'] . 'http_path.txt', 'w');
+        fwrite($fh, $values['HTTP_PATH']);
+        fclose($fh);
+
+        $path = trim(strip_tags($vars['WEB__contenido_DIR'])) . '/cronjobs/';
+
+        if (chdir($path)) {
+            $cmd = 'php -d max_execution_time=0 update_admin_data.php ' .  $values['SYSADMIN_PASSWORD'] . ' ' . $values['SYSADMIN_EMAIL'];
+            exec($cmd);
+        }
     }
 
 //    /**
